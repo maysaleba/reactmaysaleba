@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import Navi from './Navi'
 import CardList from './CardList'
@@ -9,7 +10,7 @@ import Search from './search';
 
 
 
-class App extends Component  {
+class App2 extends Component  {
   constructor () {
     super()
     this.state = {
@@ -33,6 +34,7 @@ class App extends Component  {
      return (
       <div>
     <Navi />
+     <Search />
     <SearchBox searchChange={this.onSearchChange}/>
     <CardList games={filteredGames}/>
     </div>
@@ -41,4 +43,4 @@ class App extends Component  {
    
   }
  
-export default App;
+export default App2;
