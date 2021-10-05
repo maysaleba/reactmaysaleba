@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/reactmaysaleba/static/css/main.d1f0bfa7.chunk.css",
+    "main.js": "/reactmaysaleba/static/js/main.f880abdb.chunk.js",
+    "main.js.map": "/reactmaysaleba/static/js/main.f880abdb.chunk.js.map",
+    "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.f2180555.js",
+    "runtime-main.js.map": "/reactmaysaleba/static/js/runtime-main.f2180555.js.map",
+    "static/css/2.f2512455.chunk.css": "/reactmaysaleba/static/css/2.f2512455.chunk.css",
+    "static/js/2.a548d839.chunk.js": "/reactmaysaleba/static/js/2.a548d839.chunk.js",
+    "static/js/2.a548d839.chunk.js.map": "/reactmaysaleba/static/js/2.a548d839.chunk.js.map",
+    "static/js/3.e123e185.chunk.js": "/reactmaysaleba/static/js/3.e123e185.chunk.js",
+    "static/js/3.e123e185.chunk.js.map": "/reactmaysaleba/static/js/3.e123e185.chunk.js.map",
+    "index.html": "/reactmaysaleba/index.html",
+    "static/css/2.f2512455.chunk.css.map": "/reactmaysaleba/static/css/2.f2512455.chunk.css.map",
+    "static/css/main.d1f0bfa7.chunk.css.map": "/reactmaysaleba/static/css/main.d1f0bfa7.chunk.css.map",
+    "static/js/2.a548d839.chunk.js.LICENSE.txt": "/reactmaysaleba/static/js/2.a548d839.chunk.js.LICENSE.txt",
+    "static/media/OpenCritic_logo.4885474e.svg": "/reactmaysaleba/static/media/OpenCritic_logo.4885474e.svg",
+    "static/media/logo.55b508d1.svg": "/reactmaysaleba/static/media/logo.55b508d1.svg",
+    "static/media/Cards.css": "/reactmaysaleba/static/media/platform-icons18.518321f0.webp",
+    "static/media/App.css": "/reactmaysaleba/static/media/woojooaidp-webfont.3fa0e295.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2180555.js",
+    "static/css/2.f2512455.chunk.css",
+    "static/js/2.a548d839.chunk.js",
+    "static/css/main.d1f0bfa7.chunk.css",
+    "static/js/main.f880abdb.chunk.js"
+  ]
+}
