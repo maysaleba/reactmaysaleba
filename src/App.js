@@ -21,15 +21,17 @@ class App extends Component  {
 
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
-    console.log(event.target.value);
+    // console.log(event.target.value);
    
     // console.log(filteredGames);
   }
 
-  render(){
+  render()
+  {
       const filteredGames = this.state.games.filter(game => {
-      return (game.Title.toLowerCase().includes(this.state.searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(this.state.searchfield.toLowerCase()))
-    })
+          return (game.Title.toLowerCase().includes(this.state.searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(this.state.searchfield.toLowerCase()))
+          })
+      console.log(filteredGames)
      return (
       <div>
     <Navi />

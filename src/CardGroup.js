@@ -15,10 +15,10 @@ const CardGroup = ({ games }) => {
   			sliced.map((user,i) => 
 
 				{
-					console.log(user);
+					// console.log(user);
 					return (
 					<Cards key={i} 
-					switchg={sliced[i].SCORE}
+					Score={sliced[i].SCORE}
 					Title={sliced[i].Title}
 					SaleEnds={sliced[i].SaleEnds} 
 					Image={sliced[i].Image} />);

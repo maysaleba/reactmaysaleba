@@ -4,6 +4,7 @@ import oc from "./OpenCritic_logo.svg";
 import "./Cards.css";
 
 const Cards = ({ Title, Image, Score, SaleEnds }) => {
+  // console.log({Score});
   var d = new Date();
   var lastd = new Date(d.setDate(d.getDate() - 3));
   var da = String(d.getDate()).padStart(2, "0");
