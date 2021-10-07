@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navi from './Navi'
-import CardList from './CardList'
+import CardList from './CardGroup'
 import SearchBox from './SearchBox'
 import './App.css';
 import games from './csvjson.json';

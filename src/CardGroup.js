@@ -3,30 +3,26 @@ import Cards from './Cards';
 import { Row } from 'react-bootstrap';
 import './Cards.css';
 
-const CardList = ({ games }) => {
+const CardGroup = ({ games }) => {
 	// console.log(games)
 	
 
 	var sliced = games.slice(0,20);
-	console.log(sliced);
-	
 	return(
-
-
-
   		<div className="custom-container">
   		<Row xs={2} md={4} className="g-2">
   		{
   			sliced.map((user,i) => 
 
-	{
-
-		return (<Cards key={i} 
-		Score={sliced[i].SCORE}
-		Title={sliced[i].Title}
-		SaleEnds={sliced[i].SaleEnds} 
-		Image={sliced[i].Image} />);
-	})
+				{
+					console.log(user);
+					return (
+					<Cards key={i} 
+					switchg={sliced[i].SCORE}
+					Title={sliced[i].Title}
+					SaleEnds={sliced[i].SaleEnds} 
+					Image={sliced[i].Image} />);
+				})
   		}
 		</Row>
 		</div>
@@ -37,4 +33,4 @@ const CardList = ({ games }) => {
 		);
 }
 
-export default CardList;
+export default CardGroup;
