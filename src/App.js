@@ -1,12 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Navi from './Navi'
-import CardList from './CardGroup'
+import CardGroup from './CardGroup'
 import SearchBox from './SearchBox'
 import './App.css';
 import games from './csvjson.json';
-import Search from './search';
+import Content from './Content';
+// import Search from './search';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Pagination from './Pagination'
 
 
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s');
 
 
 class App extends Component  {
@@ -15,32 +26,40 @@ class App extends Component  {
     this.state = {
         games: games,
         searchfield: ''
-
     }
+
+    this.onChangePage = this.onChangePage.bind(this);
   }
+
+  onChangePage(pageOfItems) {
+        // update state with new page of items
+        this.setState({ pageOfItems: pageOfItems });
+    }
 
   onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value })
-    // console.log(event.target.value);
-   
-    // console.log(filteredGames);
-  }
+      this.setState({ searchfield: event.target.value })
+      event.preventDefault();
+      // console.log(event.target[0].value);
+      // console.log(filteredGames);
+    }
 
-  render()
-  {
-      const filteredGames = this.state.games.filter(game => {
-          return (game.Title.toLowerCase().includes(this.state.searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(this.state.searchfield.toLowerCase()))
-          })
-      console.log(filteredGames)
-     return (
-      <div>
-    <Navi />
-    <SearchBox searchChange={this.onSearchChange}/>
-    <CardList games={filteredGames}/>
-    </div>
-      );
+  render(){
+        const filteredGames = this.state.games.filter(game => {
+        return (game.Title.toLowerCase().includes(this.state.searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(this.state.searchfield.toLowerCase()))
+        })
+
+        return (
+          <Router>
+            <Route path="/" exact render={props => 
+                <div>
+                <Navi />
+                <SearchBox searchChange={this.onSearchChange}/>
+                <CardGroup games={filteredGames}/>
+                </div> }/>
+            <Route path="/games/:games" component={Content} />
+          </Router>
+        );
   }
-   
-  }
+}
  
 export default App;

@@ -2,9 +2,11 @@ import React from "react";
 import { Badge, Card, Col } from "react-bootstrap";
 import oc from "./OpenCritic_logo.svg";
 import "./Cards.css";
+import {  Link
+} from "react-router-dom";
 
-const Cards = ({ Title, Image, Score, SaleEnds }) => {
-  // console.log({Score});
+const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug }) => {
+  // console.log(Genre);
   var d = new Date();
   var lastd = new Date(d.setDate(d.getDate() - 3));
   var da = String(d.getDate()).padStart(2, "0");
@@ -50,7 +52,9 @@ const Cards = ({ Title, Image, Score, SaleEnds }) => {
   }
 
   return (
+    
     <Col>
+    <Link to={`/games/${Slug}`}>
       <Card className="border-0">
         <Card.Img className="card-img" src={Image} />
         <Card.ImgOverlay className="card-img-overlay">
@@ -62,9 +66,12 @@ const Cards = ({ Title, Image, Score, SaleEnds }) => {
           <Card.Text className="card-text">
             <DaysLeft isExpired={SaleEnds} />
           </Card.Text>
+          {Genre}
         </Card.Body>
       </Card>
+      </Link>
     </Col>
+    
   );
 };
 
