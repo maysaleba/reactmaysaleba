@@ -10,7 +10,7 @@ function FilterDropDown ({onFilterChange}) {
   }
 
 	 const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
-	 	const [genreDropDown, setGenreDropDown] = useState('')
+	 	const [genreDropDown, setGenreDropDown] = useState('Genre')
 
 
 	return (
@@ -20,9 +20,9 @@ function FilterDropDown ({onFilterChange}) {
   	</Dropdown.Toggle>
 
   	<Dropdown.Menu>
-    	<Dropdown.Item href="#/Genre/Action" onClick={() => { onFilterChange("Action"); onDropDownChange("Action");}}>Action</Dropdown.Item>
-    	<Dropdown.Item href="#/Genre/Adventure" onClick={() => { onFilterChange("Adventure"); onDropDownChange("Adventure");}}>Adventure</Dropdown.Item>
-    	<Dropdown.Item href="#/Genre/Role-Playing" onClick={() => { onFilterChange("Role-Playing"); onDropDownChange("Role-Playing");}}>Role-Playing</Dropdown.Item>
+    	<Dropdown.Item href="#/Genre/Action" onClick={(e) => { e.preventDefault(); onFilterChange("Action"); onDropDownChange("Action");}}>Action</Dropdown.Item>
+    	<Dropdown.Item href="#/Genre/Adventure" onClick={(e) => { e.preventDefault(); onFilterChange("Adventure"); onDropDownChange("Adventure");}}>Adventure</Dropdown.Item>
+    	<Dropdown.Item href="#/Genre/Role-Playing" onClick={(e) => { e.preventDefault(); onFilterChange("Role-Playing"); onDropDownChange("Role-Playing");}}>Role-Playing</Dropdown.Item>
   	</Dropdown.Menu>
 	</Dropdown>
 		)
