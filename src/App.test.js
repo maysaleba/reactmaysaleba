@@ -7,7 +7,7 @@ import games from './csvjson.json';
 import Results from './Results';
 import { useState, useEffect } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
