@@ -1,10 +1,5 @@
 import React from 'react';
 import './Cards.css';
-import { FaSearch } from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { InputGroup, FormControl, Form } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 
 
 const SearchBox = ({searchChange}) => {

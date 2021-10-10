@@ -1,10 +1,4 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 import games from './csvjson.json';
 import Navi from './Navi'
 
@@ -18,7 +12,7 @@ const Content = ({match}) => {
   return (
     <div>
       <Navi />
-      <h1 className="text-center m-3 p-auto"><img src={matchGames[0].Image} /></h1>
+      <h1 className="text-center m-3 p-auto"><img alt='' src={matchGames[0].Image} /></h1>
     </div>
     );
 

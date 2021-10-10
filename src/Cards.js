@@ -7,21 +7,21 @@ import {  Link
 
 const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug }) => {
   // console.log(Genre);
-  var d = new Date();
-  var lastd = new Date(d.setDate(d.getDate() - 3));
-  var da = String(d.getDate()).padStart(2, "0");
-  var mo = String(d.getMonth() + 1).padStart(2, "0"); //January is 0!
-  var year = d.getFullYear();
+  // var d = new Date();
+  // var lastd = new Date(d.setDate(d.getDate() - 3));
+  // var da = String(d.getDate()).padStart(2, "0");
+  // var mo = String(d.getMonth() + 1).padStart(2, "0"); //January is 0!
+  // var year = d.getFullYear();
 
-  var daysago = year + "-" + mo + "-" + da;
+  // var daysago = year + "-" + mo + "-" + da;
 
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const firstDate = new Date();
   const secondDate = new Date(SaleEnds);
-  const diffDays = Math.round((secondDate - firstDate) / oneDay);
+  // const diffDays = Math.round((secondDate - firstDate) / oneDay);
 
   function DaysLeft(props) {
-    const isExpired = props.isExpired;
+    // const isExpired = props.isExpired;
     const diffDays = Math.round((secondDate - firstDate) / oneDay);
 
     if (diffDays > 0) {
@@ -40,12 +40,12 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug }) => {
 
   function OpenScore(score) {
     const hasScore = score.hasScore;
-    if (hasScore == -1 || hasScore == "") {
+    if (hasScore === -1 || hasScore === "") {
       return null;
     }
     return (
       <div className="d-flex justify-content-left opencritic">
-        <img className="oc" src={oc} />
+        <img className="oc" src={oc} alt=''/>
         <span className="card-text">{Score}</span>
       </div>
     );

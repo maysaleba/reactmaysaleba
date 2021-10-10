@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navi from './Navi'
 import CardGroup from './CardGroup'
 import SearchBox from './SearchBox'
@@ -8,34 +8,43 @@ import Content from './Content';
 // import Search from './search';
 import {
   HashRouter as Router,
-  Switch,
   Route,
-  Link
 } from "react-router-dom";
-import Pagination1 from './Pagination'
 
 
 
-class App extends Component  {
-  constructor () {
-    super()
-    this.state = {
-        games: games,
-        searchfield: ''
-    }
-  }
+function App()  {
 
-  onSearchChange = (event) => {
+
+  // constructor () {
+  //   super()
+  //   this.state = {
+  //       games: games,
+  //       searchfield: ''
+  //   }
+  // }
+
+  // const [posts, setPosts] = useState([games])
+  const [searchfield, setSearchfield] = useState('')
+
+  // useEffect(() => {
+  //   const res = games;
+  //   setGames(res);
+    
+  // },[]);
+
+
+
+
+  const onSearchChange = (event) => {
      
-      this.setState({ searchfield: event.target.value })
-      event.preventDefault();
-      // console.log(event.target[0].value);
-      // console.log(filteredGames);
+      setSearchfield(event.target.value)
+      // event.preventDefault();
     }
 
-  render(){
-        const filteredGames = this.state.games.filter(game => {
-        return (game.Title.toLowerCase().includes(this.state.searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(this.state.searchfield.toLowerCase()))
+
+        const filteredGames = games.filter(game => {
+        return (game.Title.toLowerCase().includes(searchfield.toLowerCase()) || game.Publisher.toLowerCase().includes(searchfield.toLowerCase()))
         })
 
         return (
@@ -43,13 +52,13 @@ class App extends Component  {
             <Route path="/" exact render={props => 
                 <div>
                 <Navi />
-                <SearchBox searchChange={this.onSearchChange}/>
+                <SearchBox searchChange={onSearchChange}/>
                 <CardGroup games={filteredGames}/>
                 </div> }/>
             <Route path="/games/:games" component={Content} />
           </Router>
         );
   }
-}
+
  
 export default App;

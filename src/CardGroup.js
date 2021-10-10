@@ -1,14 +1,7 @@
 import React from 'react';
 import Cards from './Cards';
 import { Row } from 'react-bootstrap';
-import Content from './Content'
 import './Cards.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 
 const CardGroup = ({ games, posts, loading }) => {

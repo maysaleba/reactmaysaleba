@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 
  
 const Navi = () => {
