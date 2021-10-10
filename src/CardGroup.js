@@ -5,11 +5,11 @@ import './Cards.css';
 
 
 const CardGroup = ({ games, posts, loading }) => {
-	console.log(games)
+
 	
 
 	var sliced = games.slice(0,20);
-	console.log(sliced[0])
+
 	return(
 					<div className="custom-container">
 			  		<Row xs={2} md={4} className="g-2">

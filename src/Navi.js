@@ -8,7 +8,7 @@ const Navi = () => {
     return (
   <Navbar className="fixed-top navbar" variant="dark" expand="lg">
     <Container>
-      <Navbar.Brand className="logotext " href="#home" >
+      <Navbar.Brand className="logotext " href="#" >
         <img
           alt=""
           src={logo}
