@@ -12,7 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Pagination from './Pagination'
+import Pagination1 from './Pagination'
 
 
 
@@ -27,16 +27,10 @@ class App extends Component  {
         games: games,
         searchfield: ''
     }
-
-    this.onChangePage = this.onChangePage.bind(this);
   }
 
-  onChangePage(pageOfItems) {
-        // update state with new page of items
-        this.setState({ pageOfItems: pageOfItems });
-    }
-
   onSearchChange = (event) => {
+     
       this.setState({ searchfield: event.target.value })
       event.preventDefault();
       // console.log(event.target[0].value);

@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 
-const CardGroup = ({ games, posts, loading }) => {
+const CardGroupSearch = ({ games }) => {
 	console.log(games)
 	
 
@@ -41,4 +41,4 @@ const CardGroup = ({ games, posts, loading }) => {
 	);
 }
 
-export default CardGroup;
+export default CardGroupSearch;
