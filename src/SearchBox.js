@@ -7,13 +7,13 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 
-const SearchBox = ({searchQuery, setSearchQuery}) => {
-console.log(searchQuery);
- const history = useHistory();
-    const onSubmit = e => {
-        history.push(`?s=${searchQuery}`)
-        e.preventDefault()
-    };
+const SearchBox = ({searchChange}) => {
+// console.log(searchQuery);
+//  const history = useHistory();
+//     const onSubmit = e => {
+//         history.push(`?s=${searchQuery}`)
+//         e.preventDefault()
+//     };
 
 	return (
 
@@ -48,33 +48,33 @@ console.log(searchQuery);
    //  </form>
 
 
-  <form className="text-center m-3 p-auto" action="/" method="get" onSubmit={onSubmit}>
-        <label htmlFor="header-search">
-            <span className="visually-hidden">Search Games</span>
-        </label>
-        <input
-         	value={searchQuery}
-            onInput={e => setSearchQuery(e.target.value)}
-            type="text"
-            id="header-search"
-            placeholder="Search Games"
-            name="search" 
-            // onChange = {searchChange}
-        />
-        <button type="search">Search</button>
-    </form>
+  // <form className="text-center m-3 p-auto" action="/" method="get" onSubmit={onSubmit}>
+  //       <label htmlFor="header-search">
+  //           <span className="visually-hidden">Search Games</span>
+  //       </label>
+  //       <input
+  //        	value={searchQuery}
+  //           onInput={e => setSearchQuery(e.target.value)}
+  //           type="text"
+  //           id="header-search"
+  //           placeholder="Search Games"
+  //           name="search" 
+  //           // onChange = {searchChange}
+  //       />
+  //       <button type="search">Search</button>
+  //   </form>
 
 
 
-		// <div className="text-center m-3 p-auto">
-		// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
-		// <input className="searchbox"
-		// type='search' 
-		// placeholder="&#xF002;  Search Title, Publisher in All Games..."
-		// onChange={searchChange}
-		// />
+		<div className="text-center m-3 p-auto">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
+		<input className="searchbox"
+		type='search' 
+		placeholder="&#xF002;  Search Title, Publisher in All Games..."
+		onChange={searchChange}
+		/>
 		
-		// </div>
+		</div>
 		
 		)
 }

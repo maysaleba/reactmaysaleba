@@ -16,10 +16,6 @@ import Pagination1 from './Pagination'
 
 
 
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get('s');
-
-
 class App extends Component  {
   constructor () {
     super()
