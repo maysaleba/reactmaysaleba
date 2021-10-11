@@ -5,7 +5,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
   return (
 <Container fluid="md">
 <Row xs={2} lg={2} sm={2} md={2} xl={3} className="justify-content-md-center">
-    <Col md="auto col-style">
+    <Col className="col-style">
     <Dropdown className="m-2">
       <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
@@ -55,7 +55,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
       </Dropdown.Menu>
     </Dropdown>
     </Col>
-     <Col md="auto col-style">
+     <Col className="col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
@@ -105,7 +105,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
       </Dropdown.Menu>
     </Dropdown>
     </Col>
-      <Col md="auto col-style">
+      <Col className="col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
