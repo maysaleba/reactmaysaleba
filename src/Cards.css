@@ -143,5 +143,9 @@ label:focus,
   .card-text{
     font-size:10px !important;
   }
+
+  .dropdown-style{
+    font-size: 11px !important;
+  }
 }
 
