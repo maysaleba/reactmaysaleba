@@ -4,8 +4,8 @@ import { Container, Dropdown, Row, Col } from "react-bootstrap";
 function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
   return (
 <Container fluid="md">
-<Row>
-    <Col xs md="auto col-style">
+<Row xs="auto" className="justify-content-md-center">
+    <Col md="auto col-style">
     <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
@@ -55,7 +55,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
       </Dropdown.Menu>
     </Dropdown>
     </Col>
-     <Col xs md="auto col-style">
+     <Col xs="auto" md="auto col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
@@ -105,7 +105,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
       </Dropdown.Menu>
     </Dropdown>
     </Col>
-      <Col xs md="auto col-style">
+      <Col md="auto col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}

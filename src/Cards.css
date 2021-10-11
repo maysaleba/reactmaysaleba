@@ -18,11 +18,9 @@
 
 .card-header-custom {
   display: inline-block;
-  border-radius: .25rem .25rem 0 0;
-  padding: .75rem 1.25rem;
   /*background-color: #e70009;*/
   /*border: 1px solid #e5e5e5;*/
-  border-bottom: none;
+  margin-bottom: 10px;
 }
 
 .opencritic-logo {
