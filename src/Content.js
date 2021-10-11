@@ -16,7 +16,7 @@ const Content = ({match}) => {
     <div>
       <Navi />
       <h1 className="text-center m-3 p-auto"><img alt='' src={matchGames[0].Image} /></h1>
-       <Card className="custom-container">
+       <Card className="content-container">
   <Card.Header>GAME INFO</Card.Header>
   <Card.Body>
     <Card.Title>{matchGames[0].Title}</Card.Title>

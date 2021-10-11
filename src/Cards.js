@@ -66,7 +66,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
 
             function OpenScore(score) {
               const hasScore = score.hasScore;
-              if (hasScore === -1 || hasScore === "") {
+              if (hasScore === "-1" || hasScore === "") {
                 return null;
               }
               return (
@@ -87,9 +87,10 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
 
             function PesoPrice(props){
               return (
-                  <>
+              <>
+                 
                   {"₱"+Math.round((SalePrice * phpExchange)*100)/100}
-                  </>
+               </>
                 )
             }
 

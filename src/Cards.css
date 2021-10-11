@@ -16,10 +16,19 @@
 
 }
 
+.content-container {
+  width: 30% !important;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .5rem .5rem .5rem .5rem;
+    padding: .75rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    margin-bottom: 30px;
+}
+
 .card-header-custom {
   display: flex;
-    justify-content: center;
-  align-items: center;
   /*background-color: #e70009;*/
   /*border: 1px solid #e5e5e5;*/
   margin-bottom: 10px;
@@ -81,6 +90,34 @@ label:focus,
 	color: #55597d ;
 }
 
+.dropdown-style{
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius:  10px !important;
+  padding: 12px !important;
+  width: 100% !important;
+}
+
+.dropdown-item{
+  font-size: 14px !important;
+}
+
+.btn {
+  width: 100% !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow:  none !important;
+}
+
+.col-style {
+  padding: 0 !important; 
+
+}
+
 .card-img{
   border-radius: 5px !important;
 }
@@ -91,7 +128,7 @@ label:focus,
 
  .card-text{
   font-size:14px !important;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
  .score-text{
@@ -149,5 +186,15 @@ label:focus,
   .dropdown-style{
     font-size: 11px !important;
   }
+
+  .dropdown-item{
+  font-size: 11px !important;
+  }
+
+  .score-text{
+  font-size:11px !important;
+  }
 }
+
+
 

@@ -7,12 +7,13 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
 <Row xs={2} lg={2} sm={2} md={2} xl={3} className="justify-content-md-center">
     <Col className="col-style">
     <Dropdown className="m-2">
-      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style">
+      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style" >
         {genreDropDown}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="w-100">
        <Dropdown.Item 
+          className="w-100"
           href="#"
           onClick={() => {
 			clearSearchChange();
@@ -22,7 +23,8 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         >
           All genres
         </Dropdown.Item>
-        <Dropdown.Item
+        <Dropdown.Item c
+          className="w-100"
           href="#"
           onClick={() => {
  			clearSearchChange();
@@ -33,6 +35,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           Action
         </Dropdown.Item>
         <Dropdown.Item
+          className="w-100"
           href="#"
           onClick={() => {
           	clearSearchChange();
@@ -43,6 +46,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           Adventure
         </Dropdown.Item>
         <Dropdown.Item
+          className="w-100"
           href="#"
           onClick={() => {
           	clearSearchChange();
