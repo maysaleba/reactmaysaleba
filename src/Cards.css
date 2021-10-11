@@ -17,7 +17,9 @@
 }
 
 .card-header-custom {
-  display: inline-block;
+  display: flex;
+    justify-content: center;
+  align-items: center;
   /*background-color: #e70009;*/
   /*border: 1px solid #e5e5e5;*/
   margin-bottom: 10px;

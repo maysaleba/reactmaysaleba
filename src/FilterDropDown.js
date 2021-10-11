@@ -5,9 +5,9 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
   return (
 <Container fluid="md">
 <Row xs="auto" className="justify-content-md-center">
-    <Col md="auto col-style">
+    <Col xs="auto" md="auto col-style">
     <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
+      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
       </Dropdown.Toggle>
 

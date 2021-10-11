@@ -51,10 +51,12 @@
   border: 1px solid #e5e5e5 !important;
   border-radius:  10px !important;
   padding: 12px !important;
+  width: 180px !important;
 }
 
 .dropdown-item{
   font-size: 14px !important;
+  width: 150px !important;
 }
 
 .btn:focus {
@@ -65,4 +67,5 @@
 
 .col-style {
   padding: 0 !important; 
+
 }
