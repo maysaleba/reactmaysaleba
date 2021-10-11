@@ -1,21 +1,28 @@
 import React from 'react';
 import Cards from './Cards';
-import { Row } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import './Cards.css';
+import FilterDropDown from './FilterDropDown'
 
-
-const CardGroup = ({ games, posts, loading }) => {
+const CardGroup = ({ games, posts, loading, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) => {
 
 	
 
 	var sliced = games.slice(0,20);
-
-	console.log(games.length);
-	console.log(sliced[0].SalePrice);
 	if (games.length === 0)
 	{
 		return(
+
 					<div className="custom-container">
+					<div className="card-header-custom">
+						<FilterDropDown
+				              clearFilter={clearFilter}
+				              clearSearchChange={clearSearchChange}
+				              onFilterChange={onFilterChange}
+				              genreDropDown={genreDropDown}
+				              onDropDownChange={onDropDownChange}
+				        />
+					</div>
 			  		<Row xs={2} md={4} className="g-2">
 			  		<p className="m-3">No Games Found!</p>
 			  		</Row>
@@ -28,7 +35,17 @@ const CardGroup = ({ games, posts, loading }) => {
 	else {
 
 	return(
+
 					<div className="custom-container">
+					<div className="card-header-custom">
+						<FilterDropDown
+				              clearFilter={clearFilter}
+				              clearSearchChange={clearSearchChange}
+				              onFilterChange={onFilterChange}
+				              genreDropDown={genreDropDown}
+				              onDropDownChange={onDropDownChange}
+				        />
+					</div>
 			  		<Row xs={2} md={4} className="g-2">
 			  		{
 			  			sliced.map((user,i) => 

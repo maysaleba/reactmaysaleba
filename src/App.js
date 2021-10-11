@@ -13,7 +13,7 @@ function App() {
   const [searchfield, setSearchfield] = useState("");
   const [filterField, setFilterField] = useState("");
 
-  const [genreDropDown, setGenreDropDown] = useState("All genre");
+  const [genreDropDown, setGenreDropDown] = useState("All genres");
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
 
   const onSearchChange = (event) => {
@@ -56,14 +56,8 @@ function App() {
               genreDropDown={genreDropDown}
               onDropDownChange={onDropDownChange}
             />
-            <FilterDropDown
-            clearFilter={clearFilter}
-              clearSearchChange={clearSearchChange}
-              onFilterChange={onFilterChange}
-              genreDropDown={genreDropDown}
-              onDropDownChange={onDropDownChange}
-            />
-            <CardGroup games={filteredGames} />
+
+            <CardGroup games={filteredGames} clearFilter={clearFilter} clearSearchChange={clearSearchChange} onFilterChange={onFilterChange} genreDropDown={genreDropDown} onDropDownChange={onDropDownChange}/>
           </div>
         )}
       />
