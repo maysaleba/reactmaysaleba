@@ -16,7 +16,7 @@ const filter = (path[5]);
 console.log(filter)
 
   const [searchfield, setSearchfield] = useState("");
-  const [filterField, setFilterField] = useState(filter || "");
+  const [filterField, setFilterField] = useState("");
 
   const [genreDropDown, setGenreDropDown] = useState("All genre");
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
