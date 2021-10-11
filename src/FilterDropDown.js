@@ -1,10 +1,13 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 
-function FilterDropDown({ clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
+function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
   const handleSelect = (e) => {
     console.log(e);
   };
+const path = window.location.href.split('/');
+const filter = (path[5]);
+
 
   return (
     <Dropdown className="text-center m-3 p-auto">
@@ -17,7 +20,7 @@ function FilterDropDown({ clearSearchChange, onFilterChange, genreDropDown, onDr
           href="#/Genre/All"
           onClick={() => {
 			clearSearchChange();
-            onFilterChange("");
+            clearFilter();
             onDropDownChange("All genre");
           }}
         >

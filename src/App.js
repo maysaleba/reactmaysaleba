@@ -10,8 +10,13 @@ import FilterDropDown from "./FilterDropDown";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 
 function App() {
+
+  const path = window.location.href.split('/');
+const filter = (path[5]);
+console.log(filter)
+
   const [searchfield, setSearchfield] = useState("");
-  const [filterField, setFilterField] = useState("");
+  const [filterField, setFilterField] = useState(filter || "");
 
   const [genreDropDown, setGenreDropDown] = useState("All genre");
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
@@ -25,7 +30,14 @@ function App() {
     setSearchfield("");
   }
 
+  const clearFilter = (event) => {
+    setFilterField("");
+  }
+
   const onFilterChange = (filterGenre) => setFilterField(filterGenre);
+
+
+
 
   const filteredGames = games.filter((game) => {
     return (
@@ -43,12 +55,14 @@ function App() {
           <div>
             <Navi />
             <SearchBox 
+            searchfield={searchfield}
               onSearchChange={onSearchChange} 
               onFilterChange={onFilterChange}
               genreDropDown={genreDropDown}
               onDropDownChange={onDropDownChange}
             />
             <FilterDropDown
+            clearFilter={clearFilter}
               clearSearchChange={clearSearchChange}
               onFilterChange={onFilterChange}
               genreDropDown={genreDropDown}
@@ -60,19 +74,21 @@ function App() {
       />
       <Route path="/games/:games" component={Content} />
 
-      {console.log("/" + `${filterField}`)}
+      {/*{console.log("/" + `${filterField}`)}*/}
       <Route
         path={"/Genre/" + `${filterField}`}
         render={(props) => (
           <div>
             <Navi />
              <SearchBox 
+             searchfield={searchfield}
               onSearchChange={onSearchChange} 
               onFilterChange={onFilterChange}
               genreDropDown={genreDropDown}
               onDropDownChange={onDropDownChange}
             />
             <FilterDropDown
+            clearFilter={clearFilter}
               clearSearchChange={clearSearchChange}
               onFilterChange={onFilterChange}
               genreDropDown={genreDropDown}

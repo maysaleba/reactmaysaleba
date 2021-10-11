@@ -2,7 +2,7 @@ import React from 'react';
 import './Cards.css';
 
 
-const SearchBox = ({onSearchChange, onFilterChange, genreDropDown, onDropDownChange}) => {
+const SearchBox = ({searchfield, onSearchChange, onFilterChange, genreDropDown, onDropDownChange}) => {
 // console.log(searchQuery);
 //  const history = useHistory();
 //     const onSubmit = e => {
@@ -14,6 +14,7 @@ const SearchBox = ({onSearchChange, onFilterChange, genreDropDown, onDropDownCha
 		<div className="text-center m-3 p-auto">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
 		<input className="searchbox"
+    value={searchfield}
 		type='search' 
 		placeholder="&#xF002;  Search Title, Publisher in All Games..."
 		onChange= {(e) => {
