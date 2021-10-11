@@ -2,22 +2,16 @@ import React from "react";
 import { Dropdown } from "react-bootstrap";
 
 function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
-  const handleSelect = (e) => {
-    console.log(e);
-  };
-const path = window.location.href.split('/');
-const filter = (path[5]);
-
-
   return (
-    <Dropdown className="text-center m-3 p-auto">
+    <div className="m-3" style={{display: 'flex', justifyContent: 'center'}}>
+    <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         {genreDropDown}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
        <Dropdown.Item
-          href="#/Genre/All"
+          href="#"
           onClick={() => {
 			clearSearchChange();
             clearFilter();
@@ -27,7 +21,7 @@ const filter = (path[5]);
           All genre
         </Dropdown.Item>
         <Dropdown.Item
-          href="#/Genre/Action"
+          href="#"
           onClick={() => {
  			clearSearchChange();
             onFilterChange("Action");
@@ -37,7 +31,7 @@ const filter = (path[5]);
           Action
         </Dropdown.Item>
         <Dropdown.Item
-          href="#/Genre/Adventure"
+          href="#"
           onClick={() => {
           	clearSearchChange();
             onFilterChange("Adventure");
@@ -47,7 +41,7 @@ const filter = (path[5]);
           Adventure
         </Dropdown.Item>
         <Dropdown.Item
-          href="#/Genre/Role-Playing"
+          href="#"
           onClick={() => {
           	clearSearchChange();
             onFilterChange("Role-Playing");
@@ -58,6 +52,7 @@ const filter = (path[5]);
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+    </div>
   );
 }
 

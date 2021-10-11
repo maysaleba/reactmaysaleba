@@ -1,48 +1,42 @@
-   @media  only screen and (min-width : 900px) {
-          .custom-container {
-            display: block !important;
-            width: 70% !important;
-            flex:none !important;
-            margin-left: auto;
-margin-right: auto;
-          }
-      }
-
-
- body {
-    padding-top: 80px;
+@media  only screen and (min-width : 900px) {
+  .custom-container {
+    width: 70% !important;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .5rem .5rem .5rem .5rem;
+    padding: .75rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    margin-bottom: 30px;
   }
+}
 
-.oc {
+/*a.linkto:hover, a.linkto:visited, a.linkto:active {
+  color: black !important;
+  text-decoration: none !important;
+ }*/
+
+.opencritic-logo {
   margin-left: 5px;
   margin-right: 4px;
   width: 30%;
 }
 
-
 .card-img-overlay {
   position: absolute ;
-    top: -10px !important;
-    left: -10px !important;
-    right: -10px !important;
-    z-index: 1 !important;
+  top: -10px !important;
+  left: -10px !important;
+  right: -10px !important;
+  z-index: 1 !important;
 }
 
-.opencritic{
+.opencritic-container{
   margin-left:  none;
   border-radius: 5px;
   background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
- width: 50px;
+  width: 50px;
   background: rgba(0%, 0%, 0%, 0.5); 
-}
-
-.custom-container {
-  border-radius: .5rem .5rem .5rem .5rem;
-  padding: .75rem 1.25rem;
-  background-color: #ffffff;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
-  margin-bottom: 30px;
 }
 
 .searchbox {
@@ -78,7 +72,6 @@ label:focus,
 	color: #55597d ;
 }
 
-
 .card-img{
   border-radius: 5px !important;
 }
@@ -88,52 +81,56 @@ label:focus,
 }
 
  .card-text{
-    font-size:14px !important;
-    color: white;
-    font-weight: bold;
+  font-size:14px !important;
+  font-weight: bold;
+}
+
+ .score-text{
+  font-size:14px !important;
+  color: white;
+  font-weight: bold;
 }
 
 
 .nbadges {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    background-image: url('platform-icons18.webp');
-    background-repeat: no-repeat;
-    background-size: 30px;
-    display: inline-block;
-    flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-image: url('platform-icons18.webp');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  display: inline-block;
+  flex: none;
 }
 
 .nbadges.nintendo {
-    background-color: #e70009;
-    background-position: 0px -510px;
+  background-color: #e70009;
+  background-position: 0px -510px;
 }
-
 
 @media screen and (max-width: 900px) {
   .custom-container {
-            display: block !important;
-            width: 90% !important;
-            flex:none !important;
-            margin-left: auto;
-			margin-right: auto;
-          }
+    display: block !important;
+    width: 90% !important;
+    flex:none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   body {
     padding-top: 60px;
   }
 
   .searchbox {
-	width: 80%;
-}
+    width: 80%;
+  }
 
- .card-title{
+  .card-title{
     font-size:1rem !important;
-}
+  }
 
-.card-text{
+  .card-text{
     font-size:10px !important;
+  }
 }
-          }
 

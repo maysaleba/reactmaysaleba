@@ -10,11 +10,6 @@ import FilterDropDown from "./FilterDropDown";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 
 function App() {
-
-  const path = window.location.href.split('/');
-const filter = (path[5]);
-console.log(filter)
-
   const [searchfield, setSearchfield] = useState("");
   const [filterField, setFilterField] = useState("");
 
@@ -75,7 +70,7 @@ console.log(filter)
       <Route path="/games/:games" component={Content} />
 
       {/*{console.log("/" + `${filterField}`)}*/}
-      <Route
+   {/*   <Route
         path={"/Genre/" + `${filterField}`}
         render={(props) => (
           <div>
@@ -97,7 +92,7 @@ console.log(filter)
             <CardGroup games={filteredGames} />
           </div>
         )}
-      />
+      />*/}
     </Router>
   );
 }
