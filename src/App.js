@@ -10,7 +10,20 @@ import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 
+
 function App() {
+
+
+    function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 
     const gameFromApp = (games) => {
     var x = 0;
@@ -57,6 +70,8 @@ function App() {
   const [currPage, setCurrPage] = useState(0);
   const [genreDropDown, setGenreDropDown] = useState("All genres");
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
+
+
 
   const onSearchChange = (event) => {
     setSearchfield(event.target.value);
@@ -137,9 +152,9 @@ function App() {
         )}      
       />
 
-
+      
       <Route path="/games/:games" component={Content} />
-
+      <ScrollToTop />
     </Router>
     </div>
   );
