@@ -32,7 +32,7 @@ import {  Link
             console.log(phpExchange);
 
 const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount, URL }) => {
-  console.log(SalePrice);
+  // console.log(SalePrice);
   // var d = new Date();
   // var lastd = new Date(d.setDate(d.getDate() - 3));
   // var da = String(d.getDate()).padStart(2, "0");

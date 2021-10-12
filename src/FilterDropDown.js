@@ -13,7 +13,6 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
 
       <Dropdown.Menu className="w-100">
        <Dropdown.Item 
-          className="w-100"
           href="#"
           onClick={() => {
 			clearSearchChange();
@@ -23,8 +22,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         >
           All genres
         </Dropdown.Item>
-        <Dropdown.Item c
-          className="w-100"
+        <Dropdown.Item
           href="#"
           onClick={() => {
  			clearSearchChange();
@@ -35,7 +33,6 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           Action
         </Dropdown.Item>
         <Dropdown.Item
-          className="w-100"
           href="#"
           onClick={() => {
           	clearSearchChange();
@@ -46,7 +43,6 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           Adventure
         </Dropdown.Item>
         <Dropdown.Item
-          className="w-100"
           href="#"
           onClick={() => {
           	clearSearchChange();
@@ -65,7 +61,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         {genreDropDown}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="w-100">
        <Dropdown.Item
           href="#"
           onClick={() => {
@@ -106,7 +102,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         >
           Role-Playing
         </Dropdown.Item>
-      </Dropdown.Menu>
+      </Dropdown.Menu >
     </Dropdown>
     </Col>
       <Col className="col-style">
@@ -115,7 +111,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         {genreDropDown}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="w-100">
        <Dropdown.Item
           href="#"
           onClick={() => {
