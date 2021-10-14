@@ -6,6 +6,9 @@ import FilterDropDown from "./FilterDropDown";
 import Pagination from '@mui/material/Pagination';
 
 const CardGroup = ({  
+  latestDropDown,
+  onLatestChange,
+  onLatestDrop,
   search, 
   page, 
   setSearch, 
@@ -38,6 +41,9 @@ const CardGroup = ({
         <div className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown
+            latestDropDown={latestDropDown}
+            onLatestChange={onLatestChange}
+            onLatestDrop={onLatestDrop}
             clearFilter={clearFilter}
             clearSearchChange={clearSearchChange}
             onFilterChange={onFilterChange}

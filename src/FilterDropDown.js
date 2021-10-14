@@ -1,8 +1,12 @@
 import React from "react";
 import { Container, Dropdown, Row, Col } from "react-bootstrap";
 
-function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
+function FilterDropDown({onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
+     console.log(latestDropDown)
+     console.log(onLatestDrop)
   return (
+
+
 <Container fluid="md">
 <Row xs={2} lg={2} sm={2} md={2} xl={3} className="justify-content-md-center">
     <Col className="col-style">
@@ -238,49 +242,49 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
      <Col className="col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
-        {genreDropDown}
+        {latestDropDown}
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="w-100">
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onLatestChange("Top Rated");
+            onLatestDrop("Top Rated");
+          }}
+        >
+          Top Rated
+        </Dropdown.Item>
        <Dropdown.Item
           href="#"
           onClick={() => {
-      clearSearchChange();
-            clearFilter();
-            onDropDownChange("All genres");
+          clearSearchChange();
+            onLatestChange("New Discounts");
+            onLatestDrop("New Discounts");
           }}
         >
-          All genres
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-      clearSearchChange();
-            onFilterChange("Action");
-            onDropDownChange("Action");
-          }}
-        >
-          Action
+          New Discounts
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {
             clearSearchChange();
-            onFilterChange("Adventure");
-            onDropDownChange("Adventure");
+            onLatestChange("Price ↑");
+            onLatestDrop("Price ↑");
           }}
         >
-          Adventure
+          Price ↑
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {
             clearSearchChange();
-            onFilterChange("Role-Playing");
-            onDropDownChange("Role-Playing");
+            onLatestChange("Price ↓");
+            onLatestDrop("Price ↓");
           }}
         >
-          Role-Playing
+          Price ↓
         </Dropdown.Item>
       </Dropdown.Menu >
     </Dropdown>
@@ -297,10 +301,10 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           onClick={() => {
       clearSearchChange();
             clearFilter();
-            onDropDownChange("All genres");
+            onDropDownChange("All Genres");
           }}
         >
-          All genres
+          All Genres
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
