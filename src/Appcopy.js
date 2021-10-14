@@ -41,23 +41,42 @@ export default function Main() {
   }
 
 
-  let filteredReviews = useMemo(
+  // let filteredReviews = useMemo(
+  //   () =>
+  //     reviews.filter((review) => {
+  //       return !search || review.Title.toLowerCase().includes(search.toLowerCase()) &&
+  //                         review.genre.toLowerCase().includes(filterField.toLowerCase())
+        
+  //     }),
+  //   [search]
+  // );
+
+  // console.log(filteredReviews)
+
+  // let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
+
+  // useEffect(() => {
+  //   if (search) jumpPage(1);
+  // }, [search, jumpPage]);
+
+
+    let filteredReviews = useMemo(
     () =>
       reviews.filter((review) => {
-        return !search || review.Title.toLowerCase().includes(search.toLowerCase()) && 
-                          review.genre.toLowerCase().includes(filterField.toLowerCase())
-        ;
-      }),
-    [search]
+        return (review.Title.toLowerCase().includes(search.toLowerCase()) &&
+      review.genre.toLowerCase().includes(filterField.toLowerCase()))
+        
+      })
   );
 
-  console.log(search)
+  console.log(filteredReviews)
 
   let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
 
   useEffect(() => {
-    if (search) jumpPage(1);
-  }, [search, jumpPage]);
+    if (search, filterField) jumpPage(1);
+  }, [search, filterField, jumpPage]);
+  
 
   return (
     <Router>

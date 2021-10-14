@@ -68,11 +68,14 @@ const CardGroup = ({
               </>
             ) : (
                   <div style={{ textAlign: "center" }}>
-                      <h2>No search results.</h2>
+                      <h4>No search results.</h4>
                   </div>
                 )
           }
+          <p/>
              <Pagination className="pagination"
+                  color="secondary"
+                  size="small"
                   count={maxPage}
                   page={page}
                   onChange={(e, p) => jumpPage(p)}
