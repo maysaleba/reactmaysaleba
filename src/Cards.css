@@ -16,6 +16,11 @@
 
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
 .content-container {
   width: 60% !important;
     margin-left: auto;

@@ -4,8 +4,12 @@ import { Card, Row } from "react-bootstrap";
 import "./Cards.css";
 import FilterDropDown from "./FilterDropDown";
 import ReactPaginate from "react-paginate";
+import { usePagination } from '@mui/material/Pagination';
 
 const CardGroup = ({
+  currPage,
+  totalPage,
+  handlePageClick,
   games,
   posts,
   loading,
@@ -15,14 +19,11 @@ const CardGroup = ({
   genreDropDown,
   onDropDownChange,
 }) => {
-  // console.log(games);
+  console.log(games);
 
 
 
-
-
-
-  if (games.length === 0) {
+  if (typeof games === 'undefined') {
     return (
       <div className="custom-container">
         <div className="card-header-custom">
@@ -69,8 +70,6 @@ const CardGroup = ({
             );
           })}
         </Row>
-
-        
       </div>
     );
   }

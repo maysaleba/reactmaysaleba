@@ -24,6 +24,17 @@ function App() {
   return null;
 }
 
+  const [searchfield, setSearchfield] = useState("");
+  const [filterField, setFilterField] = useState("");
+  const [filterPageGames, setFilterPageGames] = useState([]);
+
+  const filteredGames = games.filter((game) => {
+    return (
+      game.Title.toLowerCase().includes(searchfield.toLowerCase()) &&
+      game.genre.toLowerCase().includes(filterField.toLowerCase())
+    );
+  });
+
 
     const gameFromApp = (games) => {
     var x = 0;
@@ -42,41 +53,40 @@ function App() {
 
 
 
-  let asliced = gameFromApp(games);
-  let totalPage = Math.ceil(asliced.length);
-  // console.log(totalpage);
+  let pGames = gameFromApp(filteredGames);
+  let totalPage = Math.ceil(pGames.length);
 
-  const [pageNumber, setPageNumber] = useState(asliced[0]);
-  //       // console.log(pageGames)
-
-  const fetchGames = (currentPage) => {
-    const data = asliced[currentPage];
-    return data;
-  };
-
-  const handlePageClick = (data) => {
-    let currentPage = data.selected;
-    console.log(currentPage);
-    const currentPagex = fetchGames(currentPage);
-    console.log(currentPagex);
-    setPageNumber(currentPagex);
-    setCurrPage(currentPage);
-    window.scrollTo(0, 0)
-  };
-
-
-  const [searchfield, setSearchfield] = useState("");
-  const [filterField, setFilterField] = useState("");
+  const[index, setIndex] = useState(0);
+  const[pageGames, setPageGames] = useState([]);
   const [currPage, setCurrPage] = useState(0);
   const [genreDropDown, setGenreDropDown] = useState("All genres");
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
 
 
+  const fetchPageGames = (data) => {
+    setPageGames(data);
+  }
+
+  const fetchGames = (currentPage) => {
+    const data = pGames[currentPage];
+    return data;
+  };
+
+  const handlePageClick = (data) => {
+    let currentPage = data.selected;
+    const currentPagex = fetchGames(currentPage);
+    setPageGames(currentPagex);
+    setCurrPage(currentPage);
+    window.scrollTo(0, 0)
+  };
+
 
   const onSearchChange = (event) => {
-    setSearchfield(event.target.value);
-    // event.preventDefault();
+     setSearchfield(event.target.value);
+     setPageGames(pGames[0]);
   };
+
+
 
   const clearSearchChange = (event) => {
     setSearchfield("");
@@ -87,19 +97,9 @@ function App() {
   }
 
   const onFilterChange = (filterGenre) => {
-    setFilterField(filterGenre)
+    setFilterField(filterGenre);
   };
 
-
-
-
-
-  const filteredGames = games.filter((game) => {
-    return (
-      game.Title.toLowerCase().includes(searchfield.toLowerCase()) &&
-      game.genre.toLowerCase().includes(filterField.toLowerCase())
-    );
-  });
 
 
 
@@ -115,13 +115,15 @@ function App() {
             <SearchBox 
               searchfield={searchfield}
               onSearchChange={onSearchChange} 
+              fetchPageGames ={fetchPageGames}
+              pageGames = {pageGames}
               onFilterChange={onFilterChange}
               genreDropDown={genreDropDown}
               onDropDownChange={onDropDownChange}
             />
 
             <CardGroup 
-              games={pageNumber} 
+              games={pageGames} 
               clearFilter={clearFilter} 
               clearSearchChange={clearSearchChange} 
               onFilterChange={onFilterChange} 
