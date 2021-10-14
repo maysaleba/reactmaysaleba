@@ -11,7 +11,7 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
         {genreDropDown}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="w-100">
+      <Dropdown.Menu className="w-100 dropdown-menu">
        <Dropdown.Item 
           href="#"
           onClick={() => {
@@ -46,11 +46,191 @@ function FilterDropDown({ clearFilter, clearSearchChange, onFilterChange, genreD
           href="#"
           onClick={() => {
           	clearSearchChange();
+            onFilterChange("Arcade");
+            onDropDownChange("Arcade");
+          }}
+        >
+          Arcade
+        </Dropdown.Item>
+         <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Board Game");
+            onDropDownChange("Board Game");
+          }}
+        >
+          Board Game
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Communication");
+            onDropDownChange("Communication");
+          }}
+        >
+          Communication
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Education");
+            onDropDownChange("Education");
+          }}
+        >
+          Education
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Fighting");
+            onDropDownChange("Fighting");
+          }}
+        >
+          Fighting
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("First-Person");
+            onDropDownChange("First-Person");
+          }}
+        >
+          First-Person
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Indie");
+            onDropDownChange("Indie");
+          }}
+        >
+          Indie
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Lifestyle");
+            onDropDownChange("Lifestyle");
+          }}
+        >
+          Lifestyle
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Multiplayer");
+            onDropDownChange("Multiplayer");
+          }}
+        >
+          Multiplayer
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Music");
+            onDropDownChange("Music");
+          }}
+        >
+          Music
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Party");
+            onDropDownChange("Party");
+          }}
+        >
+          Party
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Platformer");
+            onDropDownChange("Platformer");
+          }}
+        >
+          Platformer
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Puzzle");
+            onDropDownChange("Puzzle");
+          }}
+        >
+          Puzzle
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Racing");
+            onDropDownChange("Racing");
+          }}
+        >
+          Racing
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
             onFilterChange("Role-Playing");
             onDropDownChange("Role-Playing");
           }}
         >
           Role-Playing
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Shooter");
+            onDropDownChange("Shooter");
+          }}
+        >
+          Shooter
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Simulation");
+            onDropDownChange("Simulation");
+          }}
+        >
+          Simulation
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Sports");
+            onDropDownChange("Sports");
+          }}
+        >
+          Sports
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onFilterChange("Strategy");
+            onDropDownChange("Strategy");
+          }}
+        >
+          Strategy
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
