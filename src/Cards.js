@@ -109,6 +109,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
           <Card.Title className="card-title">{Title}</Card.Title>
           <Card.Text className="card-text">
             <DaysLeft isExpired={SaleEnds} /> <PercentOff /> <PesoPrice />
+            {" "+Genre}
           </Card.Text>
         </Card.Body>
       </Card>

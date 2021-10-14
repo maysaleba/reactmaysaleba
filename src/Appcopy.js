@@ -74,9 +74,9 @@ export default function Main() {
   let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
 
   useEffect(() => {
-    if (search, filterField) jumpPage(1);
+    if (search || filterField) jumpPage(1);
   }, [search, filterField, jumpPage]);
-  
+
 
   return (
     <Router>
