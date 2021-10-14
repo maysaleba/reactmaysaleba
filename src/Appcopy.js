@@ -134,8 +134,8 @@ function sortJson(element, prop, propType, asc) {
   let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
 
   useEffect(() => {
-    if (search || filterField) jumpPage(1);
-  }, [search, filterField, jumpPage]);
+    if (search || filterField || latestDropDown) jumpPage(1);
+  }, [search, filterField, latestDropDown, jumpPage]);
 
 
   return (

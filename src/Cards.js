@@ -50,7 +50,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
               // const isExpired = props.isExpired;
               const diffDays = Math.round((secondDate - firstDate) / oneDay);
 
-              if (diffDays > 0) {
+              if (diffDays >= 0) {
                 return (
                   <Badge bg="warning" text="dark">
                     {diffDays} days left
