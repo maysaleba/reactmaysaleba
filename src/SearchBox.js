@@ -1,8 +1,17 @@
 import React from 'react';
 import './Cards.css';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import Container from '@mui/material/Container';
 
 
-const SearchBox = ({searchfield, onSearchChange, onFilterChange, genreDropDown, onDropDownChange}) => {
+
+const SearchBox = ({setSearch, search, searchfield, onSearchChange, onFilterChange, genreDropDown, onDropDownChange}) => {
 // console.log(searchQuery);
 //  const history = useHistory();
 //     const onSubmit = e => {
@@ -11,24 +20,58 @@ const SearchBox = ({searchfield, onSearchChange, onFilterChange, genreDropDown, 
 //     };
 
 	return (
-		<div className="text-center m-3 p-auto">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
-		<input className="searchbox"
-    value={searchfield}
-		type='search' 
-		placeholder="&#xF002;  Search Title, Publisher in All Games..."
-		onChange= {(e) => {
-            onSearchChange(e);
-            // onFilterChange("");
-            // onDropDownChange("Genre");
+    <Container maxWidth="sm">
+
+    <Paper className="searchbox"
+      component="form"
+      sx={{mx:'auto', p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%', borderRadius: 10 }}
+    >
+      <InputBase
+            value={search}
+            onChange= {(e) => {
+            setSearch(e.target.value);
+            
           }}
-		  
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search Title in All Games"
+        inputProps={{ 'aria-label': 'search google maps' }}
+      />
+      <IconButton 
+
+      type="submit" sx={{ p: '10px', backgroundColor: '#55597d', color: "white" }} aria-label="search">
+        <SearchIcon />
+      </IconButton>
+{/*      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
+      </IconButton>*/}
+    </Paper>
+
+{/*    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
+    <input className="searchbox"
+    value={search}
+    type='search' 
+    placeholder="&#xF002;  Search Title, Publisher in All Games..."
+    onChange= {(e) => {
+            setSearch(e.target.value);
+            
+          }}
+    />*/}
+    </Container>
 
 
-
-    />
-		
-		</div>
+		// <div className="text-center m-3 p-auto">
+		// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
+		// <input className="searchbox"
+  //   value={searchfield}
+		// type='search' 
+		// placeholder="&#xF002;  Search Title, Publisher in All Games..."
+		// onChange= {(e) => {
+  //           onSearchChange(e);
+  //           // onFilterChange("");
+  //           // onDropDownChange("Genre");
+  //         }}
+  //   />
+		// </div>
 		
 
 

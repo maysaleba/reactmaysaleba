@@ -4,6 +4,7 @@ import { Row } from "react-bootstrap";
 import "./Cards.css";
 import FilterDropDown from "./FilterDropDown";
 import Pagination from '@mui/material/Pagination';
+import SearchBox from "./SearchBox"
 
 const CardGroup = ({  
   latestDropDown,
@@ -26,18 +27,7 @@ const CardGroup = ({
 
   return (
     <div>
-          <div className="text-center m-3 p-auto">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"/>
-    <input className="searchbox"
-    value={search}
-    type='search' 
-    placeholder="&#xF002;  Search Title, Publisher in All Games..."
-    onChange= {(e) => {
-            setSearch(e.target.value);
-            
-          }}
-    />
-    </div>
+          <SearchBox search={search} setSearch={setSearch}/>
         <div className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown

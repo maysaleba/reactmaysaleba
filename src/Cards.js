@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+import { Badge, Card, Col } from "react-bootstrap";
 import OpenCriticLogo from "./OpenCritic_logo.svg";
 import "./Cards.css";
 import {  Link
 } from "react-router-dom";
-import Badge from '@mui/material/Badge';
+import Badge2 from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 
 
@@ -97,13 +97,14 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
             }
 
 
-            const StyledBadge = styled(Badge)(({ theme }) => ({
+            const StyledBadge = styled(Badge2)(({ theme }) => ({
   '& .MuiBadge-badge': {
     // size:50,
     height: 30,
     width: 60,
-    
+    bottom: 10,
     right: 25,
+    // backgroundColor: "red"
     // border: `2px solid ${theme.palette.background.paper}`,
     padding: '0 4px',
   },
@@ -129,9 +130,10 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
         <Card.Body>
           <Card.Title className="card-title">{Title}</Card.Title>
           <Card.Text className="card-text">
-            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> <PesoPrice />
+            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> 
+            {/*<PesoPrice />
             {" "+Genre}
-          </Card.Text>
+*/}          </Card.Text>
         </Card.Body>
       </Card>
       </Link>

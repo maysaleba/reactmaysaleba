@@ -63,11 +63,11 @@
 }
 
 .searchbox {
-  width: 40%;
-  border-radius: 5rem;
+  /*width: 40%;*/
+  /*border-radius: 5rem;*/
   padding: 10px;
   border: 1px solid #55597d;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+  /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);*/
   margin:  10px;
   outline: none;
 }
