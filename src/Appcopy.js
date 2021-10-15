@@ -7,6 +7,7 @@ import CardGroup from "./CardGroup2";
 import "./App.css";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 import Content from "./Content"
+import SearchAppBar from "./SearchAppBar"
 
 
 
@@ -145,7 +146,7 @@ function sortJson(element, prop, propType, asc) {
         exact
         render={(props) => (
             <div>
-              <Navi />
+             <SearchAppBar />
                     <CardGroup 
                     onLatestDrop = {onLatestDrop}
                     onLatestChange = {onLatestChange}

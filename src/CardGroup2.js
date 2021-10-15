@@ -27,7 +27,7 @@ const CardGroup = ({
 
   return (
     <div>
-          <SearchBox search={search} setSearch={setSearch}/>
+     {/*     <SearchBox search={search} setSearch={setSearch}/>*/}
         <div className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown
