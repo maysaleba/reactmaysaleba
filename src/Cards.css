@@ -11,7 +11,7 @@
   }
 
   body {
-  padding-top: 80px;
+  padding-top: 100px;
   }
 
 }
@@ -70,6 +70,7 @@
   /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);*/
   margin:  10px;
   outline: none;
+
 }
 
 textarea:hover, 
@@ -188,7 +189,7 @@ label:focus,
   }
 
   body {
-    padding-top: 60px !important;
+    padding-top: 80px !important;
   }
 
   .searchbox {

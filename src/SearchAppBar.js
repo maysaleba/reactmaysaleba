@@ -18,7 +18,7 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: 20,
+  // marginLeft: 10,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
@@ -38,7 +38,6 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
@@ -55,38 +54,46 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar({search, setSearch}) {
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="fixed"  sx={{ backgroundColor: '#55597d'} }>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2}}
-          >
-            <MenuIcon />
-          </IconButton>
-          <img src={logo} alt="logo" className="logotext" width="38" height="38"/>{' '}
+        <Toolbar style={{justifyContent: 'space-between'}}>
+         
+          <img src={logo} sx={{mr: 2}} alt="logo" className="logotext" width="38" height="38"/>{' '}
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginLeft: 2 }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginLeft: 2}}
           >
             maysaleba?
           </Typography>
-          <Search >
+          {/*<div className="searchbox">*/}
+          <Search sx={{ml: 2}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+                        value={search}
+            onChange= {(e) => {
+            setSearch(e.target.value);
+            
+          }}
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          {/*</div>*/}
+           <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 0, ml: 0}}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>

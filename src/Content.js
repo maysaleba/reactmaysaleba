@@ -2,9 +2,10 @@ import React from 'react';
 import games from './csvjson.json';
 import Navi from './Navi'
 import { Button, Card } from "react-bootstrap";
+import SearchAppBar from './SearchAppBar'
 
 
-const Content = ({match}) => {
+const Content = ({search, setSearch, match}) => {
 
   const matchGames = games.filter(game => {
     return game.Slug === match.params.games
@@ -14,7 +15,7 @@ const Content = ({match}) => {
  // console.log(matchGames[0].Image)
   return (
     <div>
-      <Navi />
+      <SearchAppBar search={search} setSearch={setSearch} />
       <h1 className="text-center m-3 p-auto"><img alt='' src={matchGames[0].Image} /></h1>
        <Card className="content-container">
   <Card.Header>GAME INFO</Card.Header>

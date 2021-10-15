@@ -146,7 +146,7 @@ function sortJson(element, prop, propType, asc) {
         exact
         render={(props) => (
             <div>
-             <SearchAppBar />
+             <SearchAppBar search={search} setSearch={setSearch} />
                     <CardGroup 
                     onLatestDrop = {onLatestDrop}
                     onLatestChange = {onLatestChange}
