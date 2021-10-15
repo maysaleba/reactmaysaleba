@@ -1,9 +1,11 @@
 import React from "react";
-import { Badge, Card, Col } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import OpenCriticLogo from "./OpenCritic_logo.svg";
 import "./Cards.css";
 import {  Link
 } from "react-router-dom";
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
 
 
             var today = new Date();
@@ -89,18 +91,37 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
               return (
               <>
                  
-                  {"₱"+Math.round((SalePrice * phpExchange)*100)/100}
+                  {"₱ "+Math.round((SalePrice * phpExchange))}
                </>
                 )
             }
 
+
+            const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    // size:50,
+    height: 30,
+    width: 60,
+    
+    right: 25,
+    // border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
 
   return (
     
     <Col>
     <Link to={`/games/${Slug}`} className="linkto" style={{color: 'black', textDecoration: 'none'}}>
       <Card className="border-0">
+      <StyledBadge 
+       anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'right',
+  }}
+       badgeContent=<PesoPrice/> color="secondary">
         <Card.Img className="card-img" src={Image} />
+        </StyledBadge>
         <Card.ImgOverlay className="card-img-overlay">
           <span className="img-responsive float-end nbadges nintendo"></span>
           <OpenScore hasScore={Score} />

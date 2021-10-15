@@ -53,7 +53,7 @@ const CardGroup = ({
         </div>
             {filteredReviews.length > 0 ? (
               <>        
-                <Row xs={2} md={4} className="g-2">
+                <Row xs={2} md={4} className="g-3">
                   {pageData().map((review, key) => (
                     <div key={key}>
                                   <Cards
