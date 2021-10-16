@@ -37,6 +37,16 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
         >
           New Discounts
         </Dropdown.Item>
+               <Dropdown.Item
+          href="#"
+          onClick={() => {
+          clearSearchChange();
+            onLatestChange("Latest Release");
+            onLatestDrop("Latest Release");
+          }}
+        >
+          Latest Release
+        </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {

@@ -205,7 +205,7 @@ label:focus,
     margin-bottom: 30px;
   }
 
-  .nbadges{
+/*  .nbadges{
     width: 20px;
     height: 20px;
     background-size: 20px;
@@ -214,7 +214,7 @@ label:focus,
   .nbadges.nintendo {
     background-position:  0px -340px;
   }
-
+*/
   body {
     padding-top: 80px !important;
   }

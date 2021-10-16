@@ -92,6 +92,10 @@ export default function Main() {
       sortJson(latestField, "SCORE", "string", false);
       sortJson(latestField, "SaleStarted", "string", false);
     }
+    if (filterLatest === "Latest Release") {
+      sortJson(latestField, "SCORE", "string", false);
+      sortJson(latestField, "ReleaseDate", "string", false);
+    }
     if (filterLatest === "Price ↓") {
       sortJson(latestField, "SCORE", "string", false);
       sortJson(latestField, "SalePrice", "int", false);
@@ -169,6 +173,7 @@ export default function Main() {
           </div>
         )}
       />
+      <Route path="/switch" onDropDownChange={"Action"} />
       <Route path="/games/:games" component={Content} />
       <ScrollToTop />
     </Router>
