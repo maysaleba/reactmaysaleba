@@ -65,9 +65,16 @@ export default function SearchAppBar({ search, setSearch }) {
               className="logotext"
               width="38"
               height="38"
-            />
+            /><Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, marginRight: '10px', display: { xs: 'none', sm: 'block' }, fontFamily: 'woojooaidpmedium', fontSize: 24 }}
+          >
+            MAYSALEBA?
+          </Typography>
           </Stack>
-          <Search sx={{width: {xs: '100%', md: '100%', lg: '50%'}, marginRight: 'auto'}}>
+          <Search sx={{width: {xs: '100%', md: '100%', lg: '50%'}, marginLeft: 'auto'}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>

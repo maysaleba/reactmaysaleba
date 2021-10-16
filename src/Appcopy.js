@@ -60,16 +60,16 @@ export default function Main() {
     return null;
   }
 
-  const [platformField, setPlatformField] = useState("");
+  const [platformField, setPlatformField] = useState("Switch");
   const [filterField, setFilterField] = useState("");
   const [genreDropDown, setGenreDropDown] = useState("All Genres");
-  const [platformDropDown, setPlatformDropDown] = useState("All Platforms")
+  const [platformDropDown, setPlatformDropDown] = useState("Switch")
   const [latestField, setLatestField] = useState([]);
-  const [latestDropDown, setLatestDropDown] = useState("Top Rated");
+  const [latestDropDown, setLatestDropDown] = useState("New Discounts");
 
   useEffect(() => {
     const reviews = reviewssw.concat(reviewsps);
-    sortJson(reviews, "SCORE", "string", false);
+    sortJson(reviews, "SaleStarted", "string", false);
     setLatestField(reviews);
   }, []);
 

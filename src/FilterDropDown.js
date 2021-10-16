@@ -12,7 +12,7 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
 
      <Col className="col-style">
      <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style w-100" style={{fontWeight: 'bold'}}>
         {latestDropDown}
       </Dropdown.Toggle>
 
