@@ -8,10 +8,11 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
 import logo from './logo.svg';
 
 const Search = styled('div')(({ theme }) => ({
-
   position: 'relative',
   borderRadius: 30,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -19,12 +20,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   // marginLeft: 10,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    // marginRight: theme.spacing(100),
-    width: 'auto',
-  },
+ width: 'auto'
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -44,53 +40,49 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
+    width: 'auto',
+
   },
 }));
 
-export default function SearchAppBar({search, setSearch}) {
+export default function SearchAppBar({ search, setSearch }) {
   return (
-    <Box sx={{ flexGrow: 1}}>
-      <AppBar position="fixed"  sx={{ backgroundColor: '#55597d'} }>
-        <Toolbar style={{justifyContent: 'space-between'}}>
-         
-          <img src={logo} sx={{mr: 2}} alt="logo" className="logotext" width="38" height="38"/>{' '}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginLeft: 2}}
-          >
-            maysaleba?
-          </Typography>
-          {/*<div className="searchbox">*/}
-          <Search sx={{ml: 2}}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#55597d" }}>
+        <Toolbar sx={{ justifyContent: "space-between", width: "100%",
+      maxWidth: {md:' 60%', lg: '60%'},
+      mx: "auto" }}>
+          <Stack direction="row" alignItems="center">
+            <img
+              style={{ marginRight: "10px" }}
+              src={logo}
+              alt="logo"
+              className="logotext"
+              width="38"
+              height="38"
+            />
+          </Stack>
+          <Search style={{width: 500}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-                        value={search}
-            onChange= {(e) => {
-            setSearch(e.target.value);
-            
-          }}
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              sx={{ width: "auto" }}
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              placeholder="Search All Games…"
+              inputProps={{ "aria-label": "search" }}
             />
           </Search>
           {/*</div>*/}
-           <IconButton
+          <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 0, ml: 0}}
+            sx={{ mr: 0, ml: 0 }}
           >
             <MenuIcon />
           </IconButton>

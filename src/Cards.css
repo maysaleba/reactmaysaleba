@@ -1,6 +1,6 @@
 @media  only screen and (min-width : 900px) {
   .custom-container {
-    width: 70% !important;
+    width: 60% !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;
@@ -168,7 +168,7 @@ label:focus,
 
 @media screen and (max-width: 900px) {
   .custom-container {
-    width: 100% !important;
+    width: 99% !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;
