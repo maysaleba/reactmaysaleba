@@ -1,94 +1,110 @@
 import React, { useEffect, useMemo, useState } from "react";
-import Pagination from '@mui/material/Pagination';
 import usePagination from "./usePagination.js";
-import reviews from "./csvjson.json";
-import Navi from "./Navi";
+import reviewssw from "./csvjson.json";
+import reviewsps from "./csvjsonus.json";
 import CardGroup from "./CardGroup2";
 import "./App.css";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
-import Content from "./Content"
-import SearchAppBar from "./SearchAppBar"
+import Content from "./Content";
+import SearchAppBar from "./SearchAppBar";
 
-
-
-
-
-
-// console.log(gamesxx)
-
+// console.log(reviews);
+console.log(reviewssw);
+console.log(reviewsps);
 export default function Main() {
-
-function sortJson(element, prop, propType, asc) {
-  switch (propType) {
-    case "int":
-      element = element.sort(function (a, b) {
-        if (asc) {
-          return (parseInt(a[prop]) > parseInt(b[prop])) ? 1 : ((parseInt(a[prop]) < parseInt(b[prop])) ? -1 : 0);
-        } else {
-          return (parseInt(b[prop]) > parseInt(a[prop])) ? 1 : ((parseInt(b[prop]) < parseInt(a[prop])) ? -1 : 0);
-        }
-      });
-      break;
-    default:
-      element = element.sort(function (a, b) {
-        if (asc) {
-          return (a[prop].toLowerCase() > b[prop].toLowerCase()) ? 1 : ((a[prop].toLowerCase() < b[prop].toLowerCase()) ? -1 : 0);
-        } else {
-          return (b[prop].toLowerCase() > a[prop].toLowerCase()) ? 1 : ((b[prop].toLowerCase() < a[prop].toLowerCase()) ? -1 : 0);
-        }
-      });
+  function sortJson(element, prop, propType, asc) {
+    switch (propType) {
+      case "int":
+        element = element.sort(function (a, b) {
+          if (asc) {
+            return parseInt(a[prop]) > parseInt(b[prop])
+              ? 1
+              : parseInt(a[prop]) < parseInt(b[prop])
+              ? -1
+              : 0;
+          } else {
+            return parseInt(b[prop]) > parseInt(a[prop])
+              ? 1
+              : parseInt(b[prop]) < parseInt(a[prop])
+              ? -1
+              : 0;
+          }
+        });
+        break;
+      default:
+        element = element.sort(function (a, b) {
+          if (asc) {
+            return a[prop].toLowerCase() > b[prop].toLowerCase()
+              ? 1
+              : a[prop].toLowerCase() < b[prop].toLowerCase()
+              ? -1
+              : 0;
+          } else {
+            return b[prop].toLowerCase() > a[prop].toLowerCase()
+              ? 1
+              : b[prop].toLowerCase() < a[prop].toLowerCase()
+              ? -1
+              : 0;
+          }
+        });
+    }
   }
-}
 
+  function ScrollToTop() {
+    const { pathname } = useLocation();
 
-    function ScrollToTop() {
-  const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    return null;
+  }
 
-  return null;
-}
-
-
-
+  const [platformField, setPlatformField] = useState("");
   const [filterField, setFilterField] = useState("");
   const [genreDropDown, setGenreDropDown] = useState("All Genres");
-
-  const [latestField, setLatestField] = useState(reviews);
+  const [platformDropDown, setPlatformDropDown] = useState("All Platforms")
+  const [latestField, setLatestField] = useState([]);
   const [latestDropDown, setLatestDropDown] = useState("Top Rated");
 
+  useEffect(() => {
+    const reviews = reviewssw.concat(reviewsps);
+    sortJson(reviews, "SCORE", "string", false);
+    setLatestField(reviews);
+  }, []);
+
+
+
+  const onPlatformDrop = (dropDownValue) => setPlatformDropDown(dropDownValue);
   const onLatestDrop = (dropDownValue) => setLatestDropDown(dropDownValue);
   const onDropDownChange = (dropDownValue) => setGenreDropDown(dropDownValue);
 
-
   const clearFilter = (event) => {
     setFilterField("");
-  }
+    setPlatformField("");
+  };
 
   const onLatestChange = (filterLatest) => {
-
-    if (filterLatest == "Top Rated")
-    {
-      sortJson(reviews , "SCORE", "string", false);
+    if (filterLatest === "Top Rated") {
+      sortJson(latestField, "SCORE", "string", false);
     }
-    if (filterLatest === "New Discounts")
-    {
-      sortJson(reviews , "SaleStarted", "string", false);
-
-    } 
-    if (filterLatest === "Price ↓")
-    {
-      sortJson(reviews , "SalePrice", "int", false);
-
+    if (filterLatest === "New Discounts") {
+      sortJson(latestField, "SCORE", "string", false);
+      sortJson(latestField, "SaleStarted", "string", false);
     }
-    if (filterLatest === "Price ↑")
-    {
-      sortJson(reviews , "SalePrice", "int", true);
-
+    if (filterLatest === "Price ↓") {
+      sortJson(latestField, "SCORE", "string", false);
+      sortJson(latestField, "SalePrice", "int", false);
     }
-    else {}
+    if (filterLatest === "Price ↑") {
+      sortJson(latestField, "SCORE", "string", false);
+      sortJson(latestField, "SalePrice", "int", true);
+    } else {
+    }
+  };
+
+  const onPlatformChange = (filterPlatform) => {
+    setPlatformField(filterPlatform)
   }
 
   const onFilterChange = (filterGenre) => {
@@ -97,78 +113,64 @@ function sortJson(element, prop, propType, asc) {
 
   const [search, setSearch] = useState("");
 
-      const clearSearchChange = (event) => {
+  const clearSearchChange = (event) => {
     setSearch("");
-  }
+  };
 
-
-  // let filteredReviews = useMemo(
-  //   () =>
-  //     reviews.filter((review) => {
-  //       return !search || review.Title.toLowerCase().includes(search.toLowerCase()) &&
-  //                         review.genre.toLowerCase().includes(filterField.toLowerCase())
-        
-  //     }),
-  //   [search]
-  // );
-
-  // console.log(filteredReviews)
-
-  // let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
-
-  // useEffect(() => {
-  //   if (search) jumpPage(1);
-  // }, [search, jumpPage]);
-
-
-    let filteredReviews = useMemo(
-    () =>
-      latestField.filter((review) => {
-        return (review.Title.toLowerCase().includes(search.toLowerCase()) &&
-      review.genre.toLowerCase().includes(filterField.toLowerCase()))
-        
-      })
+  let filteredReviews = useMemo(() =>
+    latestField.filter((review) => {
+      return (
+        review.Title.toLowerCase().includes(search.toLowerCase()) &&
+        review.genre.toLowerCase().includes(filterField.toLowerCase()) &&
+        review.platform.toLowerCase().includes(platformField.toLowerCase())
+        );
+    })
   );
 
-  console.log(filteredReviews)
+  console.log(filteredReviews);
 
-  let { pageData, page, maxPage, jumpPage } = usePagination(filteredReviews, 20);
+  let { pageData, page, maxPage, jumpPage } = usePagination(
+    filteredReviews,
+    20
+  );
 
   useEffect(() => {
-    if (search || filterField || latestDropDown) jumpPage(1);
-  }, [search, filterField, latestDropDown, jumpPage]);
-
+    if (search || filterField || latestDropDown || platformField) jumpPage(1);
+  }, [search, filterField, latestDropDown, platformField, jumpPage]);
 
   return (
     <Router>
-     <Route
+      <Route
         path="/"
         exact
         render={(props) => (
-            <div>
-             <SearchAppBar search={search} setSearch={setSearch} />
-                    <CardGroup 
-                    onLatestDrop = {onLatestDrop}
-                    onLatestChange = {onLatestChange}
-                    latestDropDown={latestDropDown}
-                    clearFilter={clearFilter}
-                    genreDropDown={genreDropDown}
-                    onDropDownChange={onDropDownChange}
-                    onFilterChange={onFilterChange}
-                    clearSearchChange={clearSearchChange} 
-                    search={search} 
-                    page={page} 
-                    setSearch={setSearch} 
-                    jumpPage={jumpPage} 
-                    filteredReviews={filteredReviews} 
-                    pageData={pageData} 
-                    maxPage={maxPage}/>
-            </div>
-
-      )} />
-        <Route path="/games/:games" component={Content} />
-         <ScrollToTop />
-      </Router>
-
+          <div>
+            <SearchAppBar search={search} setSearch={setSearch} />
+            <CardGroup
+              onPlatformDrop = {onPlatformDrop}
+              onPlatformChange = {onPlatformChange}
+              platformDropDown={platformDropDown}
+              onLatestDrop={onLatestDrop}
+              onLatestChange={onLatestChange}
+              latestDropDown={latestDropDown}
+              clearFilter={clearFilter}
+              genreDropDown={genreDropDown}
+              onDropDownChange={onDropDownChange}
+              onFilterChange={onFilterChange}
+              clearSearchChange={clearSearchChange}
+              search={search}
+              page={page}
+              setSearch={setSearch}
+              jumpPage={jumpPage}
+              filteredReviews={filteredReviews}
+              pageData={pageData}
+              maxPage={maxPage}
+            />
+          </div>
+        )}
+      />
+      <Route path="/games/:games" component={Content} />
+      <ScrollToTop />
+    </Router>
   );
 }

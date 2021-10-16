@@ -166,6 +166,23 @@ label:focus,
   background-position: 0px -510px;
 }
 
+.pbadges {
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    background-image: url('platform-icons18.webp');
+    background-repeat: no-repeat;
+    background-size: 35px;
+    display: inline-block;
+    flex: none;
+}
+
+
+.pbadges.playstation {
+    background-color: #004eff;
+    background-position: -3px -298px;
+}
+
 @media screen and (max-width: 900px) {
   .custom-container {
     width: 99% !important;

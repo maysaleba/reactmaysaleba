@@ -33,8 +33,9 @@ import { styled } from '@mui/material/styles';
 
             console.log(phpExchange);
 
-const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount, URL }) => {
-  // console.log(SalePrice);
+const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount, URL, Platform }) => {
+
+  console.log(Platform);
   // var d = new Date();
   // var lastd = new Date(d.setDate(d.getDate() - 3));
   // var da = String(d.getDate()).padStart(2, "0");
@@ -96,6 +97,18 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
                 )
             }
 
+            function PlatformBadge(props) {
+              const platform = props.hasBadge
+              if (platform === "Nintendo Switch" )
+              {
+                return (<span className="img-responsive float-end nbadges nintendo"></span>)
+              } if (platform === "Playstation")
+              {
+                return (<span className="img-responsive float-end pbadges playstation"></span>)
+              }
+             
+            }
+
 
             const StyledBadge = styled(Badge2)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -124,7 +137,8 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
         <Card.Img className="card-img" src={Image} />
         </StyledBadge>
         <Card.ImgOverlay className="card-img-overlay">
-          <span className="img-responsive float-end nbadges nintendo"></span>
+          <PlatformBadge hasBadge={Platform}/>
+          {/*<span className="img-responsive float-end nbadges nintendo"></span>*/}
           <OpenScore hasScore={Score} />
         </Card.ImgOverlay>
         <Card.Body>

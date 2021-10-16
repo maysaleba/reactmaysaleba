@@ -20,7 +20,10 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   // marginLeft: 10,
- width: 'auto'
+ width: 'auto',
+ '.MuiInputBase-root': {
+    width: '100%'
+  }
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -40,18 +43,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: 'auto',
-
-  },
+    width: 'auto'
+  }
 }));
+
 
 export default function SearchAppBar({ search, setSearch }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "#55597d" }}>
-        <Toolbar sx={{ justifyContent: "space-between", width: "100%",
-      maxWidth: {md:' 60%', lg: '60%'},
-      mx: "auto" }}>
+        <Toolbar sx={{ 
+          justifyContent: "space-between", 
+          width: "100%",
+          maxWidth: {md:' 60%', lg: '60%'},
+          mx: "auto" }}>
           <Stack direction="row" alignItems="center">
             <img
               style={{ marginRight: "10px" }}
@@ -62,7 +67,7 @@ export default function SearchAppBar({ search, setSearch }) {
               height="38"
             />
           </Stack>
-          <Search style={{width: 500}}>
+          <Search sx={{width: {xs: '100%', md: '100%', lg: '50%'}, marginRight: 'auto'}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -76,7 +81,6 @@ export default function SearchAppBar({ search, setSearch }) {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          {/*</div>*/}
           <IconButton
             size="large"
             edge="start"

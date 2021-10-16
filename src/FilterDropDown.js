@@ -1,17 +1,68 @@
 import React from "react";
 import { Container, Dropdown, Row, Col } from "react-bootstrap";
 
-function FilterDropDown({onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
+function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
      console.log(latestDropDown)
      console.log(onLatestDrop)
   return (
 
 
 <Container fluid="md">
-<Row xs={2} lg={2} sm={2} md={2} xl={3} className="justify-content-md-center">
+<Row xs={2} lg={2} sm={2} md={2} xl={2} className="justify-content-md-center">
+
+     <Col className="col-style">
+     <Dropdown className="m-2">
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+        {latestDropDown}
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className="w-100">
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onLatestChange("Top Rated");
+            onLatestDrop("Top Rated");
+          }}
+        >
+          Top Rated
+        </Dropdown.Item>
+       <Dropdown.Item
+          href="#"
+          onClick={() => {
+          clearSearchChange();
+            onLatestChange("New Discounts");
+            onLatestDrop("New Discounts");
+          }}
+        >
+          New Discounts
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onLatestChange("Price ↑");
+            onLatestDrop("Price ↑");
+          }}
+        >
+          Price ↑
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onLatestChange("Price ↓");
+            onLatestDrop("Price ↓");
+          }}
+        >
+          Price ↓
+        </Dropdown.Item>
+      </Dropdown.Menu >
+    </Dropdown>
+    </Col>
     <Col className="col-style">
     <Dropdown className="m-2">
-      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style" >
+      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
         {genreDropDown}
       </Dropdown.Toggle>
 
@@ -21,10 +72,10 @@ function FilterDropDown({onLatestDrop, onLatestChange, latestDropDown, clearFilt
           onClick={() => {
 			clearSearchChange();
             clearFilter();
-            onDropDownChange("All genres");
+            onDropDownChange("All Genres");
           }}
         >
-          All genres
+          All Genres
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
@@ -239,57 +290,48 @@ function FilterDropDown({onLatestDrop, onLatestChange, latestDropDown, clearFilt
       </Dropdown.Menu>
     </Dropdown>
     </Col>
-     <Col className="col-style">
+    
+      <Col className="col-style">
      <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
-        {latestDropDown}
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+        {platformDropDown}
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="w-100">
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onLatestChange("Top Rated");
-            onLatestDrop("Top Rated");
-          }}
-        >
-          Top Rated
-        </Dropdown.Item>
        <Dropdown.Item
           href="#"
           onClick={() => {
           clearSearchChange();
-            onLatestChange("New Discounts");
-            onLatestDrop("New Discounts");
+            clearFilter();
+            onPlatformDrop("All Platforms");
           }}
         >
-          New Discounts
+          All Platforms
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+      clearSearchChange();
+            onPlatformChange("Switch");
+            onPlatformDrop("Switch");
+          }}
+        >
+          Switch
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {
             clearSearchChange();
-            onLatestChange("Price ↑");
-            onLatestDrop("Price ↑");
+            onPlatformChange("Playstation");
+            onPlatformDrop("Playstation");
           }}
         >
-          Price ↑
+          Playstation
         </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onLatestChange("Price ↓");
-            onLatestDrop("Price ↓");
-          }}
-        >
-          Price ↓
-        </Dropdown.Item>
-      </Dropdown.Menu >
+      </Dropdown.Menu>
     </Dropdown>
     </Col>
-      <Col className="col-style">
+     <Col className="col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}

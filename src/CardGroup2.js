@@ -7,6 +7,9 @@ import Pagination from '@mui/material/Pagination';
 import SearchBox from "./SearchBox"
 
 const CardGroup = ({  
+  onPlatformDrop,
+  onPlatformChange,
+  platformDropDown,
   latestDropDown,
   onLatestChange,
   onLatestDrop,
@@ -31,6 +34,9 @@ const CardGroup = ({
         <div className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown
+            onPlatformDrop={onPlatformDrop}
+            onPlatformChange={onPlatformChange}
+            platformDropDown={platformDropDown}
             latestDropDown={latestDropDown}
             onLatestChange={onLatestChange}
             onLatestDrop={onLatestDrop}
@@ -57,6 +63,7 @@ const CardGroup = ({
                                           SalePrice={review.SalePrice}
                                           Discount={review.PercentOff}
                                           URL={review.URL}
+                                          Platform={review.platform}
                                   />
                     </div>
                 ))}

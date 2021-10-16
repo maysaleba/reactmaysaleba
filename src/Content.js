@@ -1,8 +1,11 @@
 import React from 'react';
-import games from './csvjson.json';
+import games1 from './csvjson.json';
+import games2 from './csvjsonus.json'
 import Navi from './Navi'
 import { Button, Card } from "react-bootstrap";
 import SearchAppBar from './SearchAppBar'
+
+let games = games1.concat(games2);
 
 
 const Content = ({search, setSearch, match}) => {
@@ -11,7 +14,7 @@ const Content = ({search, setSearch, match}) => {
     return game.Slug === match.params.games
   })
 
-  console.log(matchGames[0].description.split('\n'));
+  // console.log(matchGames[0].description.split('\n'));
  // console.log(matchGames[0].Image)
   return (
     <div>
