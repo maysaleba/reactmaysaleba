@@ -64,29 +64,40 @@ const Content = ({search, setSearch, match}) => {
                     <Col><span style={{color: '#9c27b0'}}>Release Date:</span> {matchGames[0].ReleaseDate}</Col>
                  </Row>
                  <Row>
-                    <Col><span style={{color: '#9c27b0'}}>Genre:</span> {matchGames[0].genre}</Col>
+                    
                     <Col><span style={{color: '#9c27b0'}}>OpenCritic Rating:</span> <a href={matchGames[0].OpenCriticURL}>{matchGames[0].SCORE}</a></Col>
+                  </Row>
+                  <Row>
+                  <Col><span style={{color: '#9c27b0'}}>Genre:</span> {matchGames[0].genre}</Col>
                   </Row>
               </Card.Text>
             </Card.Body>
-              <Card.Footer className="content-container-gameinfo" style={{backgroundColor: 'black',  width: '100%'}}>
-                <Row>
-                  <Col xs={2} style={{paddingLeft: '20px', display: 'inline-flex' , justifyContent: 'center',  alignItems: 'flex-end'}}>
-                    <span style={{ color: '#ffb912', fontSize: '1rem' }}>-{matchGames[0].PercentOff}</span>
+              
+                <Row xs={2}>
+                  <Col sm={1} style={{display: 'block' , flexDirection: 'column', justifyContent: 'flex-end',  alignItems: 'flex-end'}}>
+                   
                  </Col>
-                 <Col xs={8}> 
+                 <Col sm={3} style={{display: 'block' , justifyContent: 'center',  alignItems: 'flex-end'}}> 
                     <Row>
-                    <span style={{color:'grey', fontSize: '0.7rem'}}>Retail Price: <PesoPrice props={matchGames[0].Price}/></span>
+                    
                     </Row>
                     <Row>
-                    <span style={{lineHeight: '30px' , paddingBottom: '5px' , color:'white',fontSize: '2rem'}}><PesoPrice props={matchGames[0].SalePrice}/></span>
+                    <span style={{lineHeight: '30px' , paddingBottom: '5px' , color:'white',fontSize: '1.5rem'}}><PesoPrice props={matchGames[0].SalePrice}/></span>
                     </Row>
-                  </Col>
-                  <Col xs={2}><button>Hello</button></Col>
+                    </Col>
+                  </Row>
+                  <Card.Footer className="content-container-gameinfo" style={{backgroundColor: '#55597d',  width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+
+                  <div style={{width: '50px' , color: '#ffb912', marginRight: '10px', fontSize: '1rem', fontWeight: 'bold' }}>-{matchGames[0].PercentOff}</div>
+                  <div style={{display: 'block' , marginRight: 'auto'}}>
+                    <div style={{color:'#999999', fontSize: '0.8rem'}}><PesoPrice props={matchGames[0].Price}/></div>
+                    <div style={{width: '100px', color:'white', fontSize: '2rem'}}><PesoPrice props={matchGames[0].SalePrice}/></div>
+                  </div>
+                  <Card style={{display:'inline-flex', width: '200px' , backgroundColor: '#6e7290', color: 'white', padding: '5px 5px 5px 5px', margin: '5px', borderRadius: '5px', fontWeight: 'bold'}}><span style={{fontSize: '14px', margin: '5px'}}>Buy on eShop</span></Card>
+                  <Card style={{backgroundColor: '#6e7290', color: 'white', padding: '5px', margin: '5px', borderRadius: '5px', fontWeight: 'bold'}}><span style={{fontSize: '14px', margin: '5px'}}>Buy Gift Card</span></Card>
 
 
-
-                </Row>
+                
             </Card.Footer>
             {/*</Card>*/}
             <Card.Header style={{backgroundColor: 'white'}}>DESCRIPTION</Card.Header>

@@ -48,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-export default function SearchAppBar({ search, setSearch }) {
+export default function SearchAppBar({ search, setSearch, clearGenre, onDropDownChange}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "#55597d" }}>
@@ -82,7 +82,9 @@ export default function SearchAppBar({ search, setSearch }) {
               sx={{ width: "auto" }}
               value={search}
               onChange={(e) => {
+                clearGenre();
                 setSearch(e.target.value);
+                onDropDownChange("All Genres")
               }}
               placeholder="Search All Games…"
               inputProps={{ "aria-label": "search" }}

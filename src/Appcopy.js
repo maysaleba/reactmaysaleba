@@ -84,6 +84,10 @@ export default function Main() {
     setPlatformField("");
   };
 
+  const clearGenre = (event) => {
+    setFilterField("");
+  }
+
   const onLatestChange = (filterLatest) => {
     if (filterLatest === "Top Rated") {
       sortJson(latestField, "SCORE", "string", false);
@@ -149,7 +153,7 @@ export default function Main() {
         exact
         render={(props) => (
           <div>
-            <SearchAppBar search={search} setSearch={setSearch} />
+            <SearchAppBar search={search} setSearch={setSearch} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
             <CardGroup
               onPlatformDrop = {onPlatformDrop}
               onPlatformChange = {onPlatformChange}
