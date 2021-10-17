@@ -4,9 +4,10 @@ import reviewssw from "./csvjson.json";
 import reviewsps from "./csvjsonus.json";
 import CardGroup from "./CardGroup2";
 import "./App.css";
-import { HashRouter as Router, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Route, useLocation, Switch } from "react-router-dom";
 import Content from "./Content";
 import SearchAppBar from "./SearchAppBar";
+import ScrollToTop from "./ScrollToTop";
 
 // console.log(reviews);
 console.log(reviewssw);
@@ -48,16 +49,6 @@ export default function Main() {
           }
         });
     }
-  }
-
-  function ScrollToTop() {
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
   }
 
   const [platformField, setPlatformField] = useState("");
@@ -148,6 +139,8 @@ export default function Main() {
 
   return (
     <Router>
+       <ScrollToTop />
+       <Switch>
       <Route
         path="/"
         exact
@@ -176,10 +169,9 @@ export default function Main() {
             />
           </div>
         )}
-      />
-      <Route path="/switch" onDropDownChange={"Action"} />
+      />  
       <Route path="/games/:games" component={Content} />
-      <ScrollToTop />
+      </Switch>
     </Router>
   );
 }

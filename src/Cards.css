@@ -1,6 +1,6 @@
 @media  only screen and (min-width : 900px) {
   .custom-container {
-    width: 60% !important;
+    width: 60vw !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem !important;
@@ -22,7 +22,7 @@
 }
 
 .content-container {
-  width: 30% !important;
+  width: 50vw !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;

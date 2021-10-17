@@ -86,7 +86,7 @@ const Content = ({search, setSearch, match}) => {
                     </Row>
                     </Col>
                   </Row>
-                  <Card.Footer className="content-container-gameinfo" style={{backgroundColor: '#55597d',  width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                 {/* <Card.Footer className="content-container-gameinfo" style={{backgroundColor: '#55597d',  width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
 
                   <div style={{width: '50px' , color: '#ffb912', marginRight: '10px', fontSize: '1rem', fontWeight: 'bold' }}>-{matchGames[0].PercentOff}</div>
                   <div style={{display: 'block' , marginRight: 'auto'}}>
@@ -98,13 +98,14 @@ const Content = ({search, setSearch, match}) => {
 
 
                 
-            </Card.Footer>
+            </Card.Footer>*/}
             {/*</Card>*/}
             <Card.Header style={{backgroundColor: 'white'}}>DESCRIPTION</Card.Header>
             <Card.Body>
               <Card.Text className="text-muted">
                 {matchGames[0].description}
               </Card.Text>
+
             </Card.Body>
       </div>
     </div>
