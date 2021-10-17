@@ -53,7 +53,7 @@ const CardGroup = ({
                   {pageData().map((review, key) => (
                     <div key={key}>
                                   <Cards
-                                          key={review.Title}
+                                          
                                           Score={review.SCORE}
                                           Title={review.Title}
                                           SaleEnds={review.SaleEnds}
