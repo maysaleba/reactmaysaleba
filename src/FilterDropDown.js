@@ -9,7 +9,46 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
 
 <Container fluid="md">
 <Row xs={2} lg={2} sm={2} md={2} xl={2} className="justify-content-md-center">
+       <Col className="col-style">
+     <Dropdown className="m-2">
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+        {platformDropDown}
+      </Dropdown.Toggle>
 
+      <Dropdown.Menu className="w-100">
+       <Dropdown.Item
+          href="#"
+          onClick={() => {
+          clearSearchChange();
+            onPlatformChange("");
+            onPlatformDrop("All Platforms");
+          }}
+        >
+          All Platforms
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+      clearSearchChange();
+            onPlatformChange("Switch");
+            onPlatformDrop("Switch");
+          }}
+        >
+          Switch
+        </Dropdown.Item>
+        <Dropdown.Item
+          href="#"
+          onClick={() => {
+            clearSearchChange();
+            onPlatformChange("Playstation");
+            onPlatformDrop("Playstation");
+          }}
+        >
+          Playstation
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+    </Col>
      <Col className="col-style">
      <Dropdown className="m-2">
       <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style w-100" style={{fontWeight: 'bold'}}>
@@ -17,6 +56,16 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="w-100">
+      <Dropdown.Item
+          href="#"
+          onClick={() => {
+          clearSearchChange();
+            onLatestChange("New Discounts");
+            onLatestDrop("New Discounts");
+          }}
+        >
+          New Discounts
+        </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {
@@ -26,16 +75,6 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
           }}
         >
           Top Rated
-        </Dropdown.Item>
-       <Dropdown.Item
-          href="#"
-          onClick={() => {
-          clearSearchChange();
-            onLatestChange("New Discounts");
-            onLatestDrop("New Discounts");
-          }}
-        >
-          New Discounts
         </Dropdown.Item>
                <Dropdown.Item
           href="#"
@@ -117,36 +156,6 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
         >
           Arcade
         </Dropdown.Item>
-         <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onFilterChange("Board Game");
-            onDropDownChange("Board Game");
-          }}
-        >
-          Board Game
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onFilterChange("Communication");
-            onDropDownChange("Communication");
-          }}
-        >
-          Communication
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onFilterChange("Education");
-            onDropDownChange("Education");
-          }}
-        >
-          Education
-        </Dropdown.Item>
         <Dropdown.Item
           href="#"
           onClick={() => {
@@ -171,26 +180,6 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
           href="#"
           onClick={() => {
             clearSearchChange();
-            onFilterChange("Indie");
-            onDropDownChange("Indie");
-          }}
-        >
-          Indie
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onFilterChange("Lifestyle");
-            onDropDownChange("Lifestyle");
-          }}
-        >
-          Lifestyle
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
             onFilterChange("Multiplayer");
             onDropDownChange("Multiplayer");
           }}
@@ -206,16 +195,6 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
           }}
         >
           Music
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onFilterChange("Party");
-            onDropDownChange("Party");
-          }}
-        >
-          Party
         </Dropdown.Item>
         <Dropdown.Item
           href="#"
@@ -296,47 +275,6 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
           }}
         >
           Strategy
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-    </Col>
-    
-      <Col className="col-style">
-     <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
-        {platformDropDown}
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu className="w-100">
-       <Dropdown.Item
-          href="#"
-          onClick={() => {
-          clearSearchChange();
-            clearFilter();
-            onPlatformDrop("All Platforms");
-          }}
-        >
-          All Platforms
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-      clearSearchChange();
-            onPlatformChange("Switch");
-            onPlatformDrop("Switch");
-          }}
-        >
-          Switch
-        </Dropdown.Item>
-        <Dropdown.Item
-          href="#"
-          onClick={() => {
-            clearSearchChange();
-            onPlatformChange("Playstation");
-            onPlatformDrop("Playstation");
-          }}
-        >
-          Playstation
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
