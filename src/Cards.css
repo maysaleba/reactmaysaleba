@@ -3,7 +3,7 @@
     width: 60% !important;
     margin-left: auto;
     margin-right: auto;
-    border-radius: .5rem .5rem .5rem .5rem;
+    border-radius: .5rem .5rem .5rem .5rem !important;
     padding: .75rem 1.25rem;
     background-color: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
@@ -22,10 +22,20 @@
 }
 
 .content-container {
-  width: 80% !important;
+  width: 30% !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;
+    padding: .75rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    margin-bottom: 30px;
+}
+
+.content-container-gameinfo {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .5rem .5rem .5rem .5rem !important;
     padding: .75rem 1.25rem;
     background-color: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
@@ -205,6 +215,9 @@ label:focus,
     margin-bottom: 30px;
   }
 
+  .content-container {
+  width: 99% !important;
+}
 /*  .nbadges{
     width: 20px;
     height: 20px;
@@ -228,15 +241,15 @@ label:focus,
   }
 
   .card-text{
-    font-size:10px !important;
+    font-size:12px !important;
   }
 
   .dropdown-style{
-    font-size: 11px !important;
+    font-size: 12px !important;
   }
 
   .dropdown-item{
-  font-size: 11px !important;
+  font-size: 12px !important;
   }
 
   .score-text{
