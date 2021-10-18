@@ -5,6 +5,7 @@ import "./Cards.css";
 import FilterDropDown from "./FilterDropDown";
 import Pagination from '@mui/material/Pagination';
 import SearchBox from "./SearchBox"
+import Paper from '@mui/material/Paper';
 
 const CardGroup = ({  
   onPlatformDrop,
@@ -31,7 +32,7 @@ const CardGroup = ({
   return (
     <div>
      {/*     <SearchBox search={search} setSearch={setSearch}/>*/}
-        <div className="custom-container">
+        <Paper elevation={2} className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown
             onPlatformDrop={onPlatformDrop}
@@ -84,7 +85,7 @@ const CardGroup = ({
                   onChange={(e, p) => jumpPage(p)}
                 />
 
-                  </div>
+                  </Paper>
 
 
                 </div>

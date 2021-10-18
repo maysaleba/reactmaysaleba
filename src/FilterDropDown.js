@@ -11,7 +11,7 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
 <Row xs={2} lg={2} sm={2} md={2} xl={2} className="justify-content-md-center">
        <Col className="col-style">
      <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style">
         {platformDropDown}
       </Dropdown.Toggle>
 
@@ -51,7 +51,7 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
     </Col>
      <Col className="col-style">
      <Dropdown className="m-2">
-      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style w-100" style={{fontWeight: 'bold'}}>
+      <Dropdown.Toggle size="sm" id="dropdown-basic" className="dropdown-style w-100">
         {latestDropDown}
       </Dropdown.Toggle>
 
@@ -111,7 +111,7 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
     </Col>
     <Col className="col-style">
     <Dropdown className="m-2">
-      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style" style={{fontWeight: 'bold'}}>
+      <Dropdown.Toggle fluid="sm" size="sm" id="dropdown-basic" className="dropdown-style">
         {genreDropDown}
       </Dropdown.Toggle>
 

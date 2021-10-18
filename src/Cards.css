@@ -6,12 +6,13 @@
     border-radius: .5rem .5rem .5rem .5rem !important;
     padding: .75rem 1.25rem;
     background-color: #ffffff;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);*/
     margin-bottom: 30px;
   }
 
   body {
   padding-top: 100px;
+  background-color:  #6e7290 !important;
   }
 
 }
@@ -28,7 +29,7 @@
     border-radius: .5rem .5rem .5rem .5rem;
     padding: .75rem 1.25rem;
     background-color: #ffffff;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+    /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);*/
     margin-bottom: 30px;
 }
 
@@ -203,6 +204,16 @@ label:focus,
     background-position: -3px -298px;
 }
 
+.pbadges.playstation1 {
+    background-color: black;
+    background-position: -3px -298px;
+}
+
+.nbadges.nintendo1 {
+    background-color: black;
+   background-position: 0px -510px;
+}
+
 @media screen and (max-width: 900px) {
   .custom-container {
     width: 99% !important;
@@ -230,6 +241,7 @@ label:focus,
 */
   body {
     padding-top: 80px !important;
+      background-color:  #6e7290 !important;
   }
 
   .searchbox {

@@ -7,6 +7,10 @@ import "./App.css";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 import Content from "./Content";
 import SearchAppBar from "./SearchAppBar";
+import {styled, createGlobalStyle} from "styled-components";
+
+
+
 
 // console.log(reviews);
 console.log(reviewssw);
@@ -136,7 +140,7 @@ export default function Main() {
     })
   );
 
-  console.log(filteredReviews);
+  console.log(reviewssw[0].Image);
 
   let { pageData, page, maxPage, jumpPage } = usePagination(
     filteredReviews,
@@ -147,8 +151,25 @@ export default function Main() {
     if (search || filterField || latestDropDown || platformField) jumpPage(1);
   }, [search, filterField, latestDropDown, platformField, jumpPage]);
 
+
+
+// const GlobalStyle = createGlobalStyle`
+//   body {
+
+//      background: linear-gradient(black, white);
+    
+//        background-image: url(${reviewssw[0].Image});
+//        background-position: center center;
+//         background-repeat: no-repeat;
+//         background-attachment: fixed;
+//         background-size: cover;
+//   }
+// `
+
+
   return (
     <Router>
+    {/*<GlobalStyle />*/}
       <Route
         path="/"
         exact

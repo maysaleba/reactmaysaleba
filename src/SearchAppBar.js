@@ -88,6 +88,7 @@ export default function SearchAppBar({ search, setSearch, clearGenre, onDropDown
               }}
               placeholder="Search All Games…"
               inputProps={{ "aria-label": "search" }}
+
             />
           </Search>
           <IconButton
