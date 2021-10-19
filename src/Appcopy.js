@@ -172,12 +172,12 @@ const BackgroundContainer = styled.div`
     left: 0;
     right: 0;
     overflow: hidden;
-    background: #55597d;
+    background: #6e7290;
       z-index: -1;
 
 
       &:after {
-    --color-background--rgb: 85,89,125;
+    --color-background--rgb: 110,114,144;
     content: "";
     position: absolute;
     height: 50%;
