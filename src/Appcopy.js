@@ -176,7 +176,6 @@ export default function Main() {
 
   return (
     <Router>
-    <Switch>
       <Route
         path="/"
         exact
@@ -211,7 +210,6 @@ export default function Main() {
       <Route path="/games/:games" component={Content} />
 
       <ScrollToTop />
-      </Switch>
     </Router>
   );
 }

@@ -92,7 +92,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
               return (
               <>
                  
-                  {"₱ "+Math.round((SalePrice * phpExchange))}
+                  {"₱"+Math.round((SalePrice * phpExchange))}
                </>
                 )
             }
