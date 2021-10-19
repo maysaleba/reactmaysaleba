@@ -29,7 +29,7 @@ import { styled } from '@mui/material/styles';
             
 
             var phpExchange = 1 / fxcp.rates.USD;
-            var mexExchange = 1 / fxcp.rates.MXN;
+            // var mexExchange = 1 / fxcp.rates.MXN;
 
             console.log(phpExchange);
 

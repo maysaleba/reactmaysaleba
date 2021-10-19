@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Cards from "./Cards";
 import { Row } from "react-bootstrap";
 import "./Cards.css";
 import FilterDropDown from "./FilterDropDown";
 import Pagination from '@mui/material/Pagination';
-import SearchBox from "./SearchBox"
 import Paper from '@mui/material/Paper';
 
 const CardGroup = ({  
+   clearGenre,
   onPlatformDrop,
   onPlatformChange,
   platformDropDown,
@@ -35,6 +35,7 @@ const CardGroup = ({
         <Paper elevation={2} className="custom-container">
           <div className="card-header-custom">
           <FilterDropDown
+             clearGenre={clearGenre}
             onPlatformDrop={onPlatformDrop}
             onPlatformChange={onPlatformChange}
             platformDropDown={platformDropDown}
@@ -54,7 +55,6 @@ const CardGroup = ({
                   {pageData().map((review, key) => (
                     <div key={key}>
                                   <Cards
-                                          
                                           Score={review.SCORE}
                                           Title={review.Title}
                                           SaleEnds={review.SaleEnds}

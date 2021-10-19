@@ -1,9 +1,8 @@
 import React from 'react';
 import games1 from './csvjson.json';
 import games2 from './csvjsonus.json'
-import Navi from './Navi'
-import { Button, Card, Row, Col } from "react-bootstrap";
-import SearchAppBar from './SearchAppBar'
+import { Card, Row, Col } from "react-bootstrap";
+import NaviBar from './NaviBar'
 import Paper from '@mui/material/Paper';
 
 let games = games1.concat(games2);
@@ -53,8 +52,8 @@ const Content = ({search, setSearch, match}) => {
  // console.log(matchGames[0].Image)
   return (
     <div>
-      <SearchAppBar search={search} setSearch={setSearch} />
-      <div className="text-center m-3 p-auto"><img alt='' style={{borderRadius: "5px"}} src={matchGames[0].Image} /></div>
+      <NaviBar search={search} setSearch={setSearch} />
+      <div className="text-center m-3 p-auto"><img alt='' style={{width: 'auto' , borderRadius: "5px"}} src={matchGames[0].Image} /></div>
        <Paper elevation={2} className="content-container">
           {/*<Card className="content-container-gameinfo">*/}
             <Card.Header style={{backgroundColor: 'white' , fontWeight: 'bold'}}>{matchGames[0].Title}</Card.Header>

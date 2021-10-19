@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Dropdown, Row, Col } from "react-bootstrap";
 
-function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
+function FilterDropDown({clearGenre, onPlatformDrop, onPlatformChange, platformDropDown, onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
      console.log(latestDropDown)
      console.log(onLatestDrop)
   return (
@@ -119,8 +119,8 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
        <Dropdown.Item 
           href="#"
           onClick={() => {
-			clearSearchChange();
-            clearFilter();
+			      clearSearchChange();
+            clearGenre();
             onDropDownChange("All Genres");
           }}
         >
@@ -129,7 +129,7 @@ function FilterDropDown({onPlatformDrop, onPlatformChange, platformDropDown, onL
         <Dropdown.Item
           href="#"
           onClick={() => {
- 			clearSearchChange();
+ 			      clearSearchChange();
             onFilterChange("Action");
             onDropDownChange("Action");
           }}

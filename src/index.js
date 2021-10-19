@@ -4,7 +4,6 @@ import './index.css';
 import App from './Appcopy';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyPagination from './MyPagination'
 
 ReactDOM.render(
   <React.StrictMode>

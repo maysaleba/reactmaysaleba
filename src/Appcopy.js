@@ -6,8 +6,9 @@ import CardGroup from "./CardGroup2";
 import "./App.css";
 import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 import Content from "./Content";
-import SearchAppBar from "./SearchAppBar";
-import {styled, createGlobalStyle} from "styled-components";
+import NaviBar from "./NaviBar";
+// import {styled, createGlobalStyle} from "styled-components";
+import Search from './Search';
 
 
 
@@ -175,8 +176,10 @@ export default function Main() {
         exact
         render={(props) => (
           <div>
-            <SearchAppBar search={search} setSearch={setSearch} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
+            <NaviBar />
+            <Search search={search} setSearch={setSearch} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
             <CardGroup
+               clearGenre = {clearGenre}
               onPlatformDrop = {onPlatformDrop}
               onPlatformChange = {onPlatformChange}
               platformDropDown={platformDropDown}
