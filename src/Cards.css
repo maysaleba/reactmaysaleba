@@ -12,6 +12,7 @@
 
   body {
   padding-top: 90px;
+  background-color:  #f4f4f4 !important;
   }
 
 }
@@ -215,7 +216,7 @@ label:focus,
 
 @media screen and (max-width: 900px) {
   .custom-container {
-    width: 99% !important;
+    width: 90% !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;
@@ -226,7 +227,7 @@ label:focus,
   }
 
   .content-container {
-  width: 99% !important;
+  width: 90% !important;
 }
 /*  .nbadges{
     width: 20px;
@@ -240,6 +241,7 @@ label:focus,
 */
   body {
     padding-top: 80px !important;
+      background-color:  #f4f4f4 !important;
 
   }
 

@@ -49,7 +49,7 @@ const Content = ({search, setSearch, match}) => {
             }
 
 
-            const BackgroundContainer = styled.div`
+const BackgroundContainer = styled.div`
     -blur-radius: 20px;
     position: absolute;
     z-index: 0;
@@ -64,6 +64,7 @@ const Content = ({search, setSearch, match}) => {
 
 
       &:after {
+    --color-background--rgb: 244,244,244;
     content: "";
     position: absolute;
     height: 50%;

@@ -177,6 +177,7 @@ const BackgroundContainer = styled.div`
 
 
       &:after {
+    --color-background--rgb: 244,244,244;
     content: "";
     position: absolute;
     height: 50%;
