@@ -128,9 +128,9 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
     <Col>
     <Link to={`/games/${Slug}`} className="linkto" style={{color: 'black', textDecoration: 'none'}}>
       <Card className="border-0">
-     
+      
         <Card.Img className="card-img" src={Image} />
- 
+
         <Card.ImgOverlay className="card-img-overlay">
           <PlatformBadge hasBadge={Platform}/>
           {/*<span className="img-responsive float-end nbadges nintendo"></span>*/}
@@ -139,7 +139,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
         <Card.Body>
           <Card.Title className="card-title">{Title}</Card.Title>
           <Card.Text className="card-text">
-            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> 
+            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> <span style={{fontWeight: 'bold'}}><PesoPrice /></span>
             {/*<PesoPrice />
             {" "+Genre}
 */}          </Card.Text>
