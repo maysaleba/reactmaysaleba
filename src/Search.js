@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar({ searchQuery, setSearchQuery, clearGenre, onDropDownChange}) {
 return (
 	 <Box sx={{ flexGrow: 1 }}>
-	 	<Search sx={{width: {xs: '90vw', md: '50vw', lg: '30vw'}, margin: 'auto', marginBottom: '20px'}}>
+	 	<Search sx={{width: {xs: '85vw', md: '50vw', lg: '30vw'}, margin: 'auto', marginBottom: '20px'}}>
 	 	<form action="/" method="get" style={{display: 'flex'}}>	
             <StyledInputBase
               defaultValue={searchQuery}
