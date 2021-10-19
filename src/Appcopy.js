@@ -4,7 +4,7 @@ import reviewssw from "./csvjson.json";
 import reviewsps from "./csvjsonus.json";
 import CardGroup from "./CardGroup2";
 import "./App.css";
-import { BrowserRouter as Router, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Route, useLocation } from "react-router-dom";
 import Content from "./Content";
 import NaviBar from "./NaviBar";
 // import {styled, createGlobalStyle} from "styled-components";

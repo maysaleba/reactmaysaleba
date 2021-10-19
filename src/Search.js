@@ -16,7 +16,8 @@ const Search = styled('div')(({ theme }) => ({
   // marginLeft: 10,
  width: 'auto',
  '.MuiInputBase-root': {
-    width: '100%'
+    width: '100%',
+    
   }
 }));
 
@@ -28,8 +29,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  marginRight: 0,
-  paddingRight: 1,
+  padding: 5,
   // backgroundColor: 'black',
   width: '100%',
 }));
