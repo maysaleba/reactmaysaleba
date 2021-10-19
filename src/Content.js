@@ -103,9 +103,9 @@ position: absolute;
     </BackgroundContainer>
       <NaviBar search={search} setSearch={setSearch} />
       <div className="text-center m-3 p-auto"><img alt='' style={{height:'auto', maxWidth: '300px' , borderRadius: "5px"}} src={matchGames[0].Image} /></div>
-       <Paper elevation={2} className="content-container">
+       <div className="content-container">
           {/*<Card className="content-container-gameinfo">*/}
-            <Card.Header style={{backgroundColor: 'white' , fontWeight: 'bold'}}>{matchGames[0].Title}</Card.Header>
+            <Card.Header style={{fontWeight: 'bold'}}>{matchGames[0].Title}</Card.Header>
             <Card.Body>
               <Card.Text>
                 <Row>
@@ -126,14 +126,7 @@ position: absolute;
                   <Col sm={1} style={{display: 'block' , flexDirection: 'column', justifyContent: 'flex-end',  alignItems: 'flex-end'}}>
                    
                  </Col>
-                 <Col sm={3} style={{display: 'block' , justifyContent: 'center',  alignItems: 'flex-end'}}> 
-                    <Row>
-                    
-                    </Row>
-                    <Row>
-                    <span style={{lineHeight: '30px' , paddingBottom: '5px' , color:'white',fontSize: '1.5rem'}}><PesoPrice props={matchGames[0].SalePrice}/></span>
-                    </Row>
-                    </Col>
+               
                   </Row>
                  {/* <Card.Footer className="content-container-gameinfo" style={{backgroundColor: '#55597d',  width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
 
@@ -149,14 +142,14 @@ position: absolute;
                 
             </Card.Footer>*/}
             {/*</Card>*/}
-            <Card.Header style={{backgroundColor: 'white'}}>DESCRIPTION</Card.Header>
+            <Card.Header>Description</Card.Header>
             <Card.Body>
               <Card.Text className="text-muted">
                 {matchGames[0].description}
               </Card.Text>
 
             </Card.Body>
-      </Paper>
+      </div>
     </div>
     );
 
