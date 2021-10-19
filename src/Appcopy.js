@@ -4,7 +4,7 @@ import reviewssw from "./csvjson.json";
 import reviewsps from "./csvjsonus.json";
 import CardGroup from "./CardGroup2";
 import "./App.css";
-import { HashRouter as Router, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Route, useLocation, Switch } from "react-router-dom";
 import Content from "./Content";
 import NaviBar from "./NaviBar";
 // import {styled, createGlobalStyle} from "styled-components";
@@ -56,9 +56,9 @@ export default function Main() {
   }
 
 
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get('s');
-  console.log(query);
+  // const { search } = window.location;
+  // const query = new URLSearchParams(search).get('s');
+  // console.log(query);
 
 
   function ScrollToTop() {
@@ -131,7 +131,7 @@ export default function Main() {
     setFilterField(filterGenre);
   };
 
-  const [searchQuery, setSearchQuery] = useState(query || "");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const clearSearchChange = (event) => {
     setSearchQuery("");
@@ -176,7 +176,7 @@ export default function Main() {
 
   return (
     <Router>
-    {/*<GlobalStyle />*/}
+    <Switch>
       <Route
         path="/"
         exact
@@ -209,7 +209,9 @@ export default function Main() {
         )}
       />
       <Route path="/games/:games" component={Content} />
+
       <ScrollToTop />
+      </Switch>
     </Router>
   );
 }

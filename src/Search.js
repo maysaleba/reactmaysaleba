@@ -3,12 +3,12 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import IconButton from '@mui/material/IconButton';
+
 
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: 40,
+  borderRadius: 30,
   backgroundColor: '#ffffff',
   border: '1px',
   borderStyle: 'solid',
@@ -16,22 +16,18 @@ const Search = styled('div')(({ theme }) => ({
   // marginLeft: 10,
  width: 'auto',
  '.MuiInputBase-root': {
-    width: '100%',
-    
+    width: '100%'
   }
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(0, 1),
   height: '100%',
-  // position: 'absolute',
-  // pointerEvents: 'none',
+  position: 'absolute',
+  pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: 5,
-  // backgroundColor: 'black',
-  width: '100%',
+  justifyContent: 'center'
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -39,8 +35,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(0)})`,
-    paddingRight: `calc(1em + ${theme.spacing(4)})`,
+    paddingLeft: `calc(1em + ${theme.spacing(3)})`,
     transition: theme.transitions.create('width'),
     width: '100%'
   }
@@ -49,43 +44,30 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar({ searchQuery, setSearchQuery, clearGenre, onDropDownChange}) {
 return (
 	 <Box sx={{ flexGrow: 1 }}>
-	 	<Search sx={{width: {xs: '90vw', md: '50vw', lg: '30vw'}, margin: 'auto', marginBottom: '20px'}}>
-	 	<form action="/" method="get" style={{display: 'flex'}}>	
+	 	<Search sx={{width: {xs: '90vw', md: '50vw', lg: '30%'}, margin: 'auto', marginBottom: '20px'}}>
+            <SearchIconWrapper>
+              <SearchIcon style={{color:'#55597d'}} />
+            </SearchIconWrapper>
+            <form name="searchform">
             <StyledInputBase
-              defaultValue={searchQuery}
+              sx={{ width: "auto" }}
+              value={searchQuery}
 
-              // onChange={
+              onChange={
 
-              //   (e) => {
-              //   clearGenre();
-              //   onDropDownChange("All Genres")
-              //   setSearchQuery(e.target.value);
-              //   // document.searchform.submit();
+                (e) => {
+                clearGenre();
+                setSearchQuery(e.target.value);
+                onDropDownChange("All Genres")
+                // document.searchform.submit();
 
-              // }}
-
-
+              }}
               placeholder="Search All Games…"
               inputProps={{ "aria-label": "search" }}
               type="search"
-              name="s"
+              name="q"
               id="site-search"
-            />
-
-          {/*  <input 
-            type="submit"
-            // onSubmit={
-            // 	(e) => {
-            // 	setSearchQuery(e.target.value);
-            // }}
-            />*/}
-            
-            <SearchIconWrapper>
-            <IconButton type="submit">
-              <SearchIcon style={{color:'#55597d'}} />
-              </IconButton>
-            </SearchIconWrapper>
-            </form>
+            /></form>
           </Search>
     	</Box>
 
