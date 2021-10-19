@@ -7,7 +7,7 @@ import "./App.css";
 import { HashRouter as Router, Route, useLocation, Switch } from "react-router-dom";
 import Content from "./Content";
 import NaviBar from "./NaviBar";
-// import {styled, createGlobalStyle} from "styled-components";
+import styled from 'styled-components';
 import Search from './Search';
 
 
@@ -147,7 +147,7 @@ export default function Main() {
     })
   );
 
-  console.log(reviewssw[0].Image);
+
 
   let { pageData, page, maxPage, jumpPage } = usePagination(
     filteredReviews,
@@ -160,22 +160,57 @@ export default function Main() {
 
 
 
-// const GlobalStyle = createGlobalStyle`
-//   body {
 
-//      background: linear-gradient(black, white);
-    
-//        background-image: url(${reviewssw[0].Image});
-//        background-position: center center;
-//         background-repeat: no-repeat;
-//         background-attachment: fixed;
-//         background-size: cover;
-//   }
-// `
+
+const BackgroundContainer = styled.div`
+    -blur-radius: 20px;
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 60vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: #ccc;
+      z-index: -1;
+
+
+      &:after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    background: linear-gradient(
+0deg,rgba(var(--color-background--rgb),1) 0,rgba(var(--color-background--rgb),.987) 8.1%,rgba(var(--color-background--rgb),.951) 15.5%,rgba(var(--color-background--rgb),.896) 22.5%,rgba(var(--color-background--rgb),.825) 29%,rgba(var(--color-background--rgb),.741) 35.3%,rgba(var(--color-background--rgb),.648) 41.2%,rgba(var(--color-background--rgb),.55) 47.1%,rgba(var(--color-background--rgb),.45) 52.9%,rgba(var(--color-background--rgb),.352) 58.8%,rgba(var(--color-background--rgb),.259) 64.7%,rgba(var(--color-background--rgb),.175) 71%,rgba(var(--color-background--rgb),.104) 77.5%,rgba(var(--color-background--rgb),.049) 84.5%,rgba(var(--color-background--rgb),.013) 91.9%,rgba(var(--color-background--rgb),0));
+}`
+
+
+const Background = styled.div`
+      --blur-radius: 20px;
+       background-image: 
+       url(${reviewssw[0].Image});
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: calc(var(--blur-radius)*-1) calc(var(--blur-radius)*-1);
+    background-size: cover;
+    background-position: 50%;
+    mix-blend-mode: overlay;
+    filter: blur(var(--blur-radius));
+`
 
 
   return (
     <Router>
+    <BackgroundContainer>
+    <Background  />
+    </BackgroundContainer>
       <Route
         path="/"
         exact

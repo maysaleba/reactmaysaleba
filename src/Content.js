@@ -4,6 +4,7 @@ import games2 from './csvjsonus.json'
 import { Card, Row, Col } from "react-bootstrap";
 import NaviBar from './NaviBar'
 import Paper from '@mui/material/Paper';
+import styled from 'styled-components';
 
 let games = games1.concat(games2);
 
@@ -48,10 +49,57 @@ const Content = ({search, setSearch, match}) => {
             }
 
 
+            const BackgroundContainer = styled.div`
+    -blur-radius: 20px;
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 60vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: #ccc;
+      z-index: -1;
+
+
+      &:after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    background: linear-gradient(
+0deg,rgba(var(--color-background--rgb),1) 0,rgba(var(--color-background--rgb),.987) 8.1%,rgba(var(--color-background--rgb),.951) 15.5%,rgba(var(--color-background--rgb),.896) 22.5%,rgba(var(--color-background--rgb),.825) 29%,rgba(var(--color-background--rgb),.741) 35.3%,rgba(var(--color-background--rgb),.648) 41.2%,rgba(var(--color-background--rgb),.55) 47.1%,rgba(var(--color-background--rgb),.45) 52.9%,rgba(var(--color-background--rgb),.352) 58.8%,rgba(var(--color-background--rgb),.259) 64.7%,rgba(var(--color-background--rgb),.175) 71%,rgba(var(--color-background--rgb),.104) 77.5%,rgba(var(--color-background--rgb),.049) 84.5%,rgba(var(--color-background--rgb),.013) 91.9%,rgba(var(--color-background--rgb),0));
+}`
+
+
+const Background = styled.div`
+      --blur-radius: 20px;
+       background-image: 
+       url(${matchGames[0].Image});
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: calc(var(--blur-radius)*-1) calc(var(--blur-radius)*-1);
+    background-size: cover;
+    background-position: 50%;
+    mix-blend-mode: overlay;
+    filter: blur(var(--blur-radius));
+`
+
+
   // console.log(matchGames[0].description.split('\n'));
  // console.log(matchGames[0].Image)
   return (
     <div>
+        <BackgroundContainer>
+    <Background  />
+    </BackgroundContainer>
       <NaviBar search={search} setSearch={setSearch} />
       <div className="text-center m-3 p-auto"><img alt='' style={{height:'auto', maxWidth: '300px' , borderRadius: "5px"}} src={matchGames[0].Image} /></div>
        <Paper elevation={2} className="content-container">

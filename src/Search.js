@@ -11,10 +11,13 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: 40,
   backgroundColor: '#ffffff',
   border: '1px',
-  borderStyle: 'solid',
+  // borderStyle: 'solid',
   borderColor: '#55597d',
   // marginLeft: 10,
- width: 'auto',
+   "& :first-child": {
+    flexGrow: 1
+  },
+  width: 'auto',
  '.MuiInputBase-root': {
     width: '100%',
     
@@ -31,7 +34,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
   padding: 5,
   // backgroundColor: 'black',
-  width: '100%',
+  // width: '100%',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -40,7 +43,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(0)})`,
-    paddingRight: `calc(1em + ${theme.spacing(4)})`,
+    paddingRight: `calc(1em + ${theme.spacing(0)})`,
     transition: theme.transitions.create('width'),
     width: '100%'
   }
