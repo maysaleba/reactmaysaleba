@@ -56,9 +56,9 @@ export default function Main() {
   }
 
 
-  // const { search } = window.location;
-  // const query = new URLSearchParams(search).get('s');
-  // console.log(query);
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s');
+  console.log(query);
 
 
   function ScrollToTop() {
@@ -131,7 +131,7 @@ export default function Main() {
     setFilterField(filterGenre);
   };
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(query || "");
 
   const clearSearchChange = (event) => {
     setSearchQuery("");

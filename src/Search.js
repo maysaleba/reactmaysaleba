@@ -3,12 +3,12 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-
+import IconButton from '@mui/material/IconButton';
 
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: 30,
+  borderRadius: 40,
   backgroundColor: '#ffffff',
   border: '1px',
   borderStyle: 'solid',
@@ -16,18 +16,22 @@ const Search = styled('div')(({ theme }) => ({
   // marginLeft: 10,
  width: 'auto',
  '.MuiInputBase-root': {
-    width: '100%'
+    width: '100%',
+    
   }
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 1),
+  padding: theme.spacing(0, 2),
   height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
+  // position: 'absolute',
+  // pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'flex-end',
+  padding: 5,
+  // backgroundColor: 'black',
+  width: '100%',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -35,7 +39,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(3)})`,
+    paddingLeft: `calc(1em + ${theme.spacing(0)})`,
+    paddingRight: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%'
   }
@@ -44,31 +49,43 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar({ searchQuery, setSearchQuery, clearGenre, onDropDownChange}) {
 return (
 	 <Box sx={{ flexGrow: 1 }}>
-	 	<Search sx={{width: {xs: '90vw', md: '50vw', lg: '30%'}, margin: 'auto', marginBottom: '20px'}}>
-            <SearchIconWrapper>
-              <SearchIcon style={{color:'#55597d'}} />
-            </SearchIconWrapper>
-            <form name="searchform">
+	 	<Search sx={{width: {xs: '90vw', md: '50vw', lg: '30vw'}, margin: 'auto', marginBottom: '20px'}}>
+	 	<form action="/" method="get" style={{display: 'flex'}}>	
             <StyledInputBase
-              sx={{ width: "auto" }}
-              value={searchQuery}
+              defaultValue={searchQuery}
 
               onChange={
 
                 (e) => {
                 clearGenre();
-                setSearchQuery(e.target.value);
                 onDropDownChange("All Genres")
+                setSearchQuery(e.target.value);
                 // document.searchform.submit();
 
               }}
+
               autoComplete="off"
               placeholder="Search All Games…"
               inputProps={{ "aria-label": "search" }}
               type="search"
-              name="q"
+              name="s"
               id="site-search"
-            /></form>
+            />
+
+          {/*  <input 
+            type="submit"
+            // onSubmit={
+            // 	(e) => {
+            // 	setSearchQuery(e.target.value);
+            // }}
+            />*/}
+            
+            <SearchIconWrapper>
+            <IconButton type="submit">
+              <SearchIcon style={{color:'#55597d'}} />
+              </IconButton>
+            </SearchIconWrapper>
+            </form>
           </Search>
     	</Box>
 
