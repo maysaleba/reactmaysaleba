@@ -53,7 +53,7 @@ const Content = ({search, setSearch, match}) => {
   return (
     <div>
       <NaviBar search={search} setSearch={setSearch} />
-      <div className="text-center m-3 p-auto"><img alt='' style={{height:'auto', maxWidth: '100%' , borderRadius: "5px"}} src={matchGames[0].Image} /></div>
+      <div className="text-center m-3 p-auto"><img alt='' style={{height:'auto', maxWidth: '300px' , borderRadius: "5px"}} src={matchGames[0].Image} /></div>
        <Paper elevation={2} className="content-container">
           {/*<Card className="content-container-gameinfo">*/}
             <Card.Header style={{backgroundColor: 'white' , fontWeight: 'bold'}}>{matchGames[0].Title}</Card.Header>
