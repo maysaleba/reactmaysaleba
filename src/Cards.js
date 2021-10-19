@@ -128,14 +128,9 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
     <Col>
     <Link to={`/games/${Slug}`} className="linkto" style={{color: 'black', textDecoration: 'none'}}>
       <Card className="border-0">
-      <StyledBadge 
-       anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'right',
-  }}
-       badgeContent=<PesoPrice/> color="secondary">
+     
         <Card.Img className="card-img" src={Image} />
-        </StyledBadge>
+ 
         <Card.ImgOverlay className="card-img-overlay">
           <PlatformBadge hasBadge={Platform}/>
           {/*<span className="img-responsive float-end nbadges nintendo"></span>*/}

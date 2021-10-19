@@ -62,6 +62,7 @@ return (
                 // document.searchform.submit();
 
               }}
+              autoComplete="off"
               placeholder="Search All Games…"
               inputProps={{ "aria-label": "search" }}
               type="search"
