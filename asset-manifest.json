@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/reactmaysaleba/static/css/main.26032fc2.chunk.css",
-    "main.js": "/reactmaysaleba/static/js/main.b85d7be8.chunk.js",
-    "main.js.map": "/reactmaysaleba/static/js/main.b85d7be8.chunk.js.map",
-    "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.9a78376d.js",
-    "runtime-main.js.map": "/reactmaysaleba/static/js/runtime-main.9a78376d.js.map",
+    "main.css": "/reactmaysaleba/static/css/main.c5734fcc.chunk.css",
+    "main.js": "/reactmaysaleba/static/js/main.040094e9.chunk.js",
+    "main.js.map": "/reactmaysaleba/static/js/main.040094e9.chunk.js.map",
+    "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.91be3966.js",
+    "runtime-main.js.map": "/reactmaysaleba/static/js/runtime-main.91be3966.js.map",
     "static/css/2.d8cb5cde.chunk.css": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.b4f16a7c.chunk.js": "/reactmaysaleba/static/js/2.b4f16a7c.chunk.js",
-    "static/js/2.b4f16a7c.chunk.js.map": "/reactmaysaleba/static/js/2.b4f16a7c.chunk.js.map",
-    "static/js/3.cc54a081.chunk.js": "/reactmaysaleba/static/js/3.cc54a081.chunk.js",
-    "static/js/3.cc54a081.chunk.js.map": "/reactmaysaleba/static/js/3.cc54a081.chunk.js.map",
+    "static/js/2.7bc37f3c.chunk.js": "/reactmaysaleba/static/js/2.7bc37f3c.chunk.js",
+    "static/js/2.7bc37f3c.chunk.js.map": "/reactmaysaleba/static/js/2.7bc37f3c.chunk.js.map",
+    "static/js/3.e1016826.chunk.js": "/reactmaysaleba/static/js/3.e1016826.chunk.js",
+    "static/js/3.e1016826.chunk.js.map": "/reactmaysaleba/static/js/3.e1016826.chunk.js.map",
     "index.html": "/reactmaysaleba/index.html",
     "static/css/2.d8cb5cde.chunk.css.map": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css.map",
-    "static/css/main.26032fc2.chunk.css.map": "/reactmaysaleba/static/css/main.26032fc2.chunk.css.map",
-    "static/js/2.b4f16a7c.chunk.js.LICENSE.txt": "/reactmaysaleba/static/js/2.b4f16a7c.chunk.js.LICENSE.txt",
+    "static/css/main.c5734fcc.chunk.css.map": "/reactmaysaleba/static/css/main.c5734fcc.chunk.css.map",
+    "static/js/2.7bc37f3c.chunk.js.LICENSE.txt": "/reactmaysaleba/static/js/2.7bc37f3c.chunk.js.LICENSE.txt",
     "static/media/OpenCritic_logo.4885474e.svg": "/reactmaysaleba/static/media/OpenCritic_logo.4885474e.svg",
     "static/media/logo.55b508d1.svg": "/reactmaysaleba/static/media/logo.55b508d1.svg",
     "static/media/Cards.css": "/reactmaysaleba/static/media/platform-icons18.518321f0.webp",
     "static/media/App.css": "/reactmaysaleba/static/media/woojooaidp-webfont.3fa0e295.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a78376d.js",
+    "static/js/runtime-main.91be3966.js",
     "static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.b4f16a7c.chunk.js",
-    "static/css/main.26032fc2.chunk.css",
-    "static/js/main.b85d7be8.chunk.js"
+    "static/js/2.7bc37f3c.chunk.js",
+    "static/css/main.c5734fcc.chunk.css",
+    "static/js/main.040094e9.chunk.js"
   ]
 }
