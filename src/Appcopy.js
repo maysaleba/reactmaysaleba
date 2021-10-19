@@ -4,7 +4,7 @@ import reviewssw from "./csvjson.json";
 import reviewsps from "./csvjsonus.json";
 import CardGroup from "./CardGroup2";
 import "./App.css";
-import { HashRouter as Router, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, useLocation } from "react-router-dom";
 import Content from "./Content";
 import NaviBar from "./NaviBar";
 // import {styled, createGlobalStyle} from "styled-components";
@@ -54,6 +54,12 @@ export default function Main() {
         });
     }
   }
+
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s');
+  console.log(query);
+
 
   function ScrollToTop() {
     const { pathname } = useLocation();
@@ -125,16 +131,16 @@ export default function Main() {
     setFilterField(filterGenre);
   };
 
-  const [search, setSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState(query || "");
 
   const clearSearchChange = (event) => {
-    setSearch("");
+    setSearchQuery("");
   };
 
   let filteredReviews = useMemo(() =>
     latestField.filter((review) => {
       return (
-        review.Title.toLowerCase().includes(search.toLowerCase()) &&
+        review.Title.toLowerCase().includes(searchQuery.toLowerCase()) &&
         review.genre.toLowerCase().includes(filterField.toLowerCase()) &&
         review.platform.toLowerCase().includes(platformField.toLowerCase())
         );
@@ -149,8 +155,8 @@ export default function Main() {
   );
 
   useEffect(() => {
-    if (search || filterField || latestDropDown || platformField) jumpPage(1);
-  }, [search, filterField, latestDropDown, platformField, jumpPage]);
+    if (searchQuery || filterField || latestDropDown || platformField) jumpPage(1);
+  }, [searchQuery, filterField, latestDropDown, platformField, jumpPage]);
 
 
 
@@ -177,7 +183,7 @@ export default function Main() {
         render={(props) => (
           <div>
             <NaviBar />
-            <Search search={search} setSearch={setSearch} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
+            <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
             <CardGroup
                clearGenre = {clearGenre}
               onPlatformDrop = {onPlatformDrop}
@@ -191,9 +197,9 @@ export default function Main() {
               onDropDownChange={onDropDownChange}
               onFilterChange={onFilterChange}
               clearSearchChange={clearSearchChange}
-              search={search}
+              searchQuery={searchQuery}
               page={page}
-              setSearch={setSearch}
+              setSearchQuery={setSearchQuery}
               jumpPage={jumpPage}
               filteredReviews={filteredReviews}
               pageData={pageData}
