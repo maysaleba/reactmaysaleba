@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactmaysaleba/static/css/main.876a53a7.chunk.css",
-    "main.js": "/reactmaysaleba/static/js/main.1c37e98c.chunk.js",
-    "main.js.map": "/reactmaysaleba/static/js/main.1c37e98c.chunk.js.map",
+    "main.js": "/reactmaysaleba/static/js/main.47a72514.chunk.js",
+    "main.js.map": "/reactmaysaleba/static/js/main.47a72514.chunk.js.map",
     "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.b85c7861.js",
     "runtime-main.js.map": "/reactmaysaleba/static/js/runtime-main.b85c7861.js.map",
     "static/css/2.d8cb5cde.chunk.css": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.d8cb5cde.chunk.css",
     "static/js/2.3d745377.chunk.js",
     "static/css/main.876a53a7.chunk.css",
-    "static/js/main.1c37e98c.chunk.js"
+    "static/js/main.47a72514.chunk.js"
   ]
 }
