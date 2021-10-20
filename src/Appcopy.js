@@ -244,7 +244,6 @@ position: absolute;
         )}
       />
       <Route path="/games/:games" component={Content} />
-
       <ScrollToTop />
     </Router>
   );
