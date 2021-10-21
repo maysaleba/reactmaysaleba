@@ -21,9 +21,10 @@
   width:  80%;
 }
 
+
 .badge-danger {
-    color:  white !important;
-    background-color: #dc3545 !important;
+    color:  black !important;
+    background-color: white !important;
 }
 
 .badge {
@@ -55,11 +56,15 @@
     width: 100%;
 }
 
-/*.btn-info {
+.btn{
+  font-size: 0.9rem !important;
+}
+
+.btn-secondary {
     color: white !important;
-    background-color: purple !important;
-    border-color: purple !important;
-}*/
+    background-color: #6e7290 !important;
+    border-color: #6e7290 !important;
+}
 
 p {
    display:block !important;
@@ -134,10 +139,10 @@ table {
 }
 
 a {
-    color: #09b0d9;
-    text-decoration: none;
+    color: #000000 !important;
+    text-decoration: none !important;
     background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+    -webkit-text-decoration-skip: objects !important;
 }
 
 .text-dark, .watch-button.watched:not(:hover) .text {
@@ -158,7 +163,7 @@ a {
 
 
   .item-price-table td.version {
-    font-size: 90%;
+    font-size: 0.8rem;
     /*border:  none;*/
 }
 
@@ -299,6 +304,14 @@ label:focus,
 {
     outline:none !important;
     -webkit-appearance:none;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+   box-shadow: 0 0 8px 0px rgb(0 0 0 / 10%) !important; 
+}
+
+.btn-check:focus+.btn, .btn:focus {
+   box-shadow: 0 0 8px 0px rgb(0 0 0 / 10%) !important; 
 }
 
 ::-webkit-input-placeholder {

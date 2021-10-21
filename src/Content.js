@@ -216,14 +216,26 @@ let x = matchGames[0].SaleEnds;
         <table className="table table-align-middle item-price-table">
           <tbody>
             <tr className="item-table-best">
-              <td><WhichStore /></td>
-              <td className="version">Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</td>
-              <td className="version"><div className="btn btn-block btn-light"><PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span></div></td>
+              <td><a href={matchGames[0].URL} target="_blank" style={{padding: 0}}><WhichStore /></a></td>
+              <td className="version"><a href={matchGames[0].URL} target="_blank" style={{padding: 0}}>Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</a></td>
+              <td className="version">
+              <a href={matchGames[0].URL} target="_blank">
+                <div className="btn btn-block btn-secondary">
+                  <PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span>
+                </div>
+                </a>
+              </td>
             </tr>
-                        <tr className="item-table-best">
+            <tr className="item-table-best">
               <td><div style={{marginLeft: '10px'}} className="logonin shopee"><img src={download} /></div></td>
               <td className="version">Gift Card<br /> {DateConvert(matchGames[0].SaleEnds)}</td>
-              <td className="version">Buy Now</td>
+              <td className="version">
+                 <a href={matchGames[0].URL} target="_blank">
+                <div className="btn btn-block btn-secondary">
+                  <PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span>
+                </div>
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
