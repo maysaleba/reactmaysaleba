@@ -17,6 +17,10 @@
 
 }
 
+p {
+   display:block !important;
+}
+
 .psplusbadge
 {
 background-size:  15px;
