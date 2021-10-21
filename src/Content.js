@@ -53,7 +53,7 @@ const Content = ({ search, setSearch, match }) => {
       )
   } else {
     let input = props.props;
-    let newText = input.split(/(?=\•)/).map ((item, i) => <p key={i}>{item}</p>);
+    let newText = input.split(/(?=•)/).map ((item, i) => <p key={i}>{item}</p>);
     return (
         newText
         )
