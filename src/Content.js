@@ -102,7 +102,7 @@ let x = matchGames[0].SaleEnds;
           return (
          <Link underline="none" hover="none" color="black" href={matchGames[0].OpenCriticURL}>
            <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}> <span className="opencritic-logo"><span style={{color: 'white', borderRadius: 5, backgroundColor: '#6e7290', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
+           <span style={{color:"black"}}> <span className="opencritic-logo"><span style={{color: 'white', borderRadius: 5, backgroundColor: '#5a33ff', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
          </Link>
       )
     }
@@ -217,7 +217,7 @@ let x = matchGames[0].SaleEnds;
           <tbody>
             <tr className="item-table-best">
               <td><a href={matchGames[0].URL} target="_blank" style={{padding: 0}}><WhichStore /></a></td>
-              <td className="version"><a href={matchGames[0].URL} target="_blank" style={{padding: 0}}>Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</a></td>
+              <td className="version"><a href={matchGames[0].URL} target="_blank" style={{padding: 10}}>Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</a></td>
               <td className="version">
               <a href={matchGames[0].URL} target="_blank">
                 <div className="btn btn-block btn-secondary">
