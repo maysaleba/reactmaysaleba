@@ -17,9 +17,190 @@
 
 }
 
+.price-container {
+  width:  80%;
+}
+
+.badge-danger {
+    color:  white !important;
+    background-color: #dc3545 !important;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+
+
+.ml-2, .mx-2 {
+    margin-left: 0.5rem !important;
+}
+
+.btn .badge {
+    position: relative;
+    top: -1px;
+}
+
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/*.btn-info {
+    color: white !important;
+    background-color: purple !important;
+    border-color: purple !important;
+}*/
+
 p {
    display:block !important;
 }
+
+.logonin.eshop {
+    background-image: url(logo-eshop.svg);
+    max-width: 12em;
+  }
+
+.logonin.shopee {
+    background-image: url(Shopee.svg);
+    max-width: 12em;
+  }
+
+.logonin.psstore {
+    background-image: url(playstationstore.png);
+    max-width: 12em;
+  }
+
+.logonin {
+    max-width: 10em;
+    max-height: 2.8em;
+    height: 2.8em;
+    width: 8em;
+    background-size: contain;
+    background-position: left;
+    background-attachment: scroll;
+    background-color: transparent;
+    background-repeat: no-repeat;
+  }
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.item-price-table {
+    margin-bottom: 0;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    color: #09b0d9;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.text-dark, .watch-button.watched:not(:hover) .text {
+    color: #343a40 !important;
+}
+
+.item-price-table td a {
+    padding: 0.75rem;
+    display: block;
+}
+.item-price-table .has-notes td a {
+    padding-bottom: 0.25rem;
+}
+
+.item-table-best {
+    background-color: #f0e9f8;
+  }
+
+
+  .item-price-table td.version {
+    font-size: 90%;
+    /*border:  none;*/
+}
+
+table tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+    border-color: white;
+    /*border-bottom-left-radius: 10px;*/
+    /*border:  none;*/
+}
+
+table tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+    border-color: white;
+    /*border-bottom-right-radius: 10px;*/
+    /*border: none;*/
+}
+
+table tr:first-child td:nth-child(2) {
+    /*border-top-right-radius: 10px;*/
+    border-color: white;
+    /*border-bottom-right-radius: 10px;*/
+    /*border: none;*/
+}
+
+table tr:last-child td:first-child {
+    /*border-top-left-radius: 10px;*/
+    border-bottom-left-radius: 10px;
+    border:  none;
+}
+
+table tr:last-child td:last-child {
+    /*border-top-right-radius: 10px;*/
+    border-bottom-right-radius: 10px;
+    border: none;
+}
+
+table tr:last-child td:nth-child(2) {
+    /*border-top-right-radius: 10px;*/
+    /*border-bottom-right-radius: 10px;*/
+    border: none;
+}
+
 
 .psplusbadge
 {
@@ -146,10 +327,7 @@ label:focus,
   font-size: 14px !important;
 }
 
-.btn {
-  text-align: left !important;
-  width: 100% !important;
-}
+
 
 .dropdown-toggle::after {
     -ms-transform: rotate(-0deg); /* IE 9 */
@@ -159,11 +337,7 @@ label:focus,
     float:right;
 }
 
-.btn:focus {
-  outline: none !important;
-  outline-offset: none !important;
-      box-shadow: 0 0 8px 0px rgb(0 0 0 / 10%) !important;
-}
+
 
 .col-style {
   padding: 0 !important; 
@@ -233,6 +407,33 @@ label:focus,
    background-position: 0px -510px;
 }
 
+
+@media screen and (max-width: 575.98px) {
+
+.item-price-table {
+    margin-left: -4px;
+    margin-right: -4px;
+    width: initial;
+    max-width: initial;
+    min-width: 100%;
+}
+
+.item-price-table td.version {
+    font-size: 80%;
+    /*border: none;*/
+}
+
+.logonin {
+    max-width: 5.5em !important;
+}
+
+.price-container {
+  width:  100%;
+}
+
+}
+
+
 @media screen and (max-width: 900px) {
   .custom-container {
     width: 90% !important;
@@ -248,7 +449,6 @@ label:focus,
   p {
    display:block !important;
 }
-
 
   .content-container {
   width: 90% !important;

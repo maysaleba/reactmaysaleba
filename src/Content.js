@@ -3,9 +3,9 @@ import games1 from "./csvjson.json";
 import games2 from "./csvjsonus.json";
 import { Card, Row, Col } from "react-bootstrap";
 import NaviBar from "./NaviBar";
-import Paper from "@mui/material/Paper";
-import Link from '@mui/material/Link';
+import {Paper, Link} from "@mui/material";
 import styled from "styled-components";
+import download  from './download.gif'
 
 let games = games1.concat(games2);
 
@@ -61,8 +61,36 @@ const Content = ({ search, setSearch, match }) => {
 
 }
 
+
+function WhichStore() {
+      if (matchGames[0].platform === 'Playstation'){
+    return (
+        <div style={{marginLeft: '10px'}} className="logonin psstore"><img src={download} /></div>
+      )
+  } else {
+    return (
+        <div style={{marginLeft: '10px'}} className="logonin eshop"><img src={download} /></div>
+        )
+  }
+}
+
+
+function DateConvert(s) {
+  var s = s.split(/\D/),
+    dt = new Date(s[0], s[1] - 1, s[2]);
+  return dt.toLocaleString('en-CA', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+
+
+let x = matchGames[0].SaleEnds;
+
+
+
   function HasOpenCritic(props){
-    console.log(props.props)
     if (props.props === "" || props.props === "-1"){
       return (
          <span>
@@ -73,8 +101,8 @@ const Content = ({ search, setSearch, match }) => {
     } else {
           return (
          <Link underline="none" hover="none" color="black" href={matchGames[0].OpenCriticURL}>
-           <span className="opencritic-logo" style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}> {matchGames[0].SCORE}</span>
+           <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
+           <span style={{color:"black"}}> <span className="opencritic-logo"><span style={{color: 'white', borderRadius: 5, backgroundColor: 'purple', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
          </Link>
       )
     }
@@ -141,7 +169,7 @@ const Content = ({ search, setSearch, match }) => {
   `;
 
   // console.log(matchGames[0].description.split('\n'));
-  // console.log(matchGames[0].Image)
+  console.log(matchGames[0].SalePrice)
   return (
     <div>
       <BackgroundContainer>
@@ -168,7 +196,7 @@ const Content = ({ search, setSearch, match }) => {
             </Col>
             <Col>
               <span style={{ color: "#9c27b0" }}>Release Date:</span>{" "}
-              {matchGames[0].ReleaseDate}
+              {DateConvert(matchGames[0].ReleaseDate)}
             </Col>
           </Row>
           <Row>
@@ -184,40 +212,24 @@ const Content = ({ search, setSearch, match }) => {
             </Col>
           </Row>
         </Card.Body>
+        <div className="price-container" style={{margin: 'auto'}}>
+        <table className="table table-align-middle item-price-table">
+          <tbody>
+            <tr className="item-table-best">
+              <td><WhichStore /></td>
+              <td className="version">Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</td>
+              <td className="version"><div className="btn btn-block btn-light"><PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span></div></td>
+            </tr>
+                        <tr className="item-table-best">
+              <td><div style={{marginLeft: '10px'}} className="logonin shopee"><img src={download} /></div></td>
+              <td className="version">Gift Card<br /> {DateConvert(matchGames[0].SaleEnds)}</td>
+              <td className="version">Buy Now</td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
 
-        <Row xs={2}>
-          <Col
-            sm={1}
-            style={{
-              display: "block",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-            }}
-          ></Col>
-          <Col
-            sm={3}
-            style={{
-              display: "block",
-              justifyContent: "center",
-              alignItems: "flex-end",
-            }}
-          >
-            <Row></Row>
-            <Row>
-              <span
-                style={{
-                  lineHeight: "30px",
-                  paddingBottom: "5px",
-                  color: "white",
-                  fontSize: "1.5rem",
-                }}
-              >
-                <PesoPrice props={matchGames[0].SalePrice} />
-              </span>
-            </Row>
-          </Col>
-        </Row>
+
         <div style={{fontSize: 14}}>
         <Card.Header style={{ backgroundColor: "white" }}>
           Description
