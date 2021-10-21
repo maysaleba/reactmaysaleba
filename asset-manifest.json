@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reactmaysaleba/static/css/main.dff1b108.chunk.css",
+    "main.css": "/reactmaysaleba/static/css/main.f8c2b7e0.chunk.css",
     "main.js": "/reactmaysaleba/static/js/main.251b9b84.chunk.js",
     "main.js.map": "/reactmaysaleba/static/js/main.251b9b84.chunk.js.map",
     "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.c9b6dae9.js",
@@ -12,7 +12,7 @@
     "static/js/3.3fabf4cf.chunk.js.map": "/reactmaysaleba/static/js/3.3fabf4cf.chunk.js.map",
     "index.html": "/reactmaysaleba/index.html",
     "static/css/2.d8cb5cde.chunk.css.map": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css.map",
-    "static/css/main.dff1b108.chunk.css.map": "/reactmaysaleba/static/css/main.dff1b108.chunk.css.map",
+    "static/css/main.f8c2b7e0.chunk.css.map": "/reactmaysaleba/static/css/main.f8c2b7e0.chunk.css.map",
     "static/js/2.6defad8e.chunk.js.LICENSE.txt": "/reactmaysaleba/static/js/2.6defad8e.chunk.js.LICENSE.txt",
     "static/media/Cards.css": "/reactmaysaleba/static/media/psplus.19bc6709.svg",
     "static/media/logo.55b508d1.svg": "/reactmaysaleba/static/media/logo.55b508d1.svg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.c9b6dae9.js",
     "static/css/2.d8cb5cde.chunk.css",
     "static/js/2.6defad8e.chunk.js",
-    "static/css/main.dff1b108.chunk.css",
+    "static/css/main.f8c2b7e0.chunk.css",
     "static/js/main.251b9b84.chunk.js"
   ]
 }
