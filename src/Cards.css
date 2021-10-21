@@ -245,6 +245,11 @@ label:focus,
     margin-bottom: 30px;
   }
 
+  p {
+   display:block !important;
+}
+
+
   .content-container {
   width: 90% !important;
 }
