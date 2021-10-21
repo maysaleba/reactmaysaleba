@@ -2,8 +2,6 @@ import React from "react";
 import { Container, Dropdown, Row, Col } from "react-bootstrap";
 
 function FilterDropDown({clearGenre, onPlatformDrop, onPlatformChange, platformDropDown, onLatestDrop, onLatestChange, latestDropDown, clearFilter, clearSearchChange, onFilterChange, genreDropDown, onDropDownChange }) {
-     console.log(latestDropDown)
-     console.log(onLatestDrop)
   return (
 
 

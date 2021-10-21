@@ -65,7 +65,9 @@ const CardGroup = ({
                                           Discount={review.PercentOff}
                                           URL={review.URL}
                                           Platform={review.platform}
+                                          PlusPrice={review.PlusPrice}
                                   />
+                                  
                     </div>
                 ))}
                 </Row>
@@ -89,7 +91,7 @@ const CardGroup = ({
 
 
                 </div>
-                
+
     )
 };
 

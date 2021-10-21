@@ -12,10 +12,6 @@ import Search from './Search';
 
 
 
-
-// console.log(reviews);
-console.log(reviewssw);
-console.log(reviewsps);
 export default function Main() {
   function sortJson(element, prop, propType, asc) {
     switch (propType) {
@@ -58,7 +54,6 @@ export default function Main() {
 
   const { search } = window.location;
   const query = new URLSearchParams(search).get('s');
-  console.log(query);
 
 
   function ScrollToTop() {
@@ -218,9 +213,13 @@ position: absolute;
         render={(props) => (
           <div>
             <NaviBar />
-            <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} clearGenre = {clearGenre} onDropDownChange={onDropDownChange}/>
+            <Search 
+              searchQuery={searchQuery} 
+              setSearchQuery={setSearchQuery} 
+              clearGenre = {clearGenre} 
+              onDropDownChange={onDropDownChange}/>
             <CardGroup
-               clearGenre = {clearGenre}
+              clearGenre = {clearGenre}
               onPlatformDrop = {onPlatformDrop}
               onPlatformChange = {onPlatformChange}
               platformDropDown={platformDropDown}

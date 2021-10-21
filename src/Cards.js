@@ -1,6 +1,5 @@
 import React from "react";
 import { Badge, Card, Col } from "react-bootstrap";
-import OpenCriticLogo from "./OpenCritic_logo.svg";
 import "./Cards.css";
 import {  Link
 } from "react-router-dom";
@@ -33,9 +32,8 @@ import { styled } from '@mui/material/styles';
 
             console.log(phpExchange);
 
-const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount, URL, Platform }) => {
+const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount, URL, Platform, PlusPrice }) => {
 
-  console.log(Platform);
   // var d = new Date();
   // var lastd = new Date(d.setDate(d.getDate() - 3));
   // var da = String(d.getDate()).padStart(2, "0");
@@ -74,32 +72,55 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
               }
               return (
                 <div className="d-flex justify-content-left opencritic-container">
-                  <img className="opencritic-logo" src={OpenCriticLogo} alt=''/>
-                  <span className="score-text">{Score}</span>
+                  {/*<span className="opencritic-logo" />*/}
+                  <span className="opencritic-logo score-text">{Score}</span>
                 </div>
               );
             }
 
             function PercentOff(props) {
               return (
-                <Badge bg="danger">
+                <Badge pill bg="danger">
                   {"-"+Discount}
                 </Badge>
               );
             }
 
             function PesoPrice(props){
-              return (
-              <>
-                 
+
+              if (props.psorsw === "Switch"){
+                   return (
+                 <span style={{fontWeight: 'bold'}}>
                   {"₱"+Math.round((SalePrice * phpExchange))}
-               </>
+                  </span>
+                )
+              } if  (props.psorsw === "Playstation"){
+                   return (
+                 <span style={{fontWeight: 'light'}}>
+                  {"₱"+Math.round((SalePrice * phpExchange))}
+                  </span>
                 )
             }
+          }
+
+
+                      function PesoPlusPrice(props){
+
+              if (props.psorsw === "Switch"){
+                   return null;
+              } if  (props.psorsw === "Playstation"){
+                   return (
+                 <span className="psplusbadge" style={{fontWeight: 'bold'}}>
+                  {"₱"+Math.round((PlusPrice * phpExchange))}
+                  </span>
+                )
+            }
+          }
+
 
             function PlatformBadge(props) {
               const platform = props.hasBadge
-              if (platform === "Nintendo Switch" )
+              if (platform === "Switch" )
               {
                 return (<span className="img-responsive float-end nbadges nintendo"></span>)
               } if (platform === "Playstation")
@@ -139,7 +160,7 @@ const Cards = ({ Title, Image, Score, SaleEnds, Genre, Slug, SalePrice, Discount
         <Card.Body>
           <Card.Title className="card-title">{Title}</Card.Title>
           <Card.Text className="card-text">
-            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> <span style={{fontWeight: 'bold'}}><PesoPrice /></span>
+            <DaysLeft isExpired={SaleEnds} /> <PercentOff /> <PesoPrice psorsw={Platform} /> <PesoPlusPrice psorsw={Platform} pesoplus={PlusPrice} />
             {/*<PesoPrice />
             {" "+Genre}
 */}          </Card.Text>

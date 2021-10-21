@@ -14,7 +14,7 @@ const Search = styled('div')(({ theme }) => ({
   // borderStyle: 'solid',
   borderColor: '#55597d',
   // marginLeft: 10,
-   "& :first-child": {
+   "& :first-of-type": {
     flexGrow: 1
   },
   width: 'auto',
