@@ -102,7 +102,8 @@ let x = matchGames[0].SaleEnds;
           return (
          <Link underline="none" hover="none" color="black" href={matchGames[0].OpenCriticURL}>
            <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}> <span className="opencritic-logo"><span style={{color: 'white', borderRadius: 5, backgroundColor: '#5a33ff', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
+           <span style={{color:"black"}}> <span className="opencritic-logo">
+           <span style={{color: 'white', borderRadius: 5, backgroundColor: '#fc3e04', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
          </Link>
       )
     }

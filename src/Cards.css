@@ -18,7 +18,7 @@
 }
 
 .price-container {
-  width:  80%;
+  width:  100%;
 }
 
 
@@ -224,7 +224,7 @@ display: inline-block;  /* may not need this, but I've found I do */
 }
 
 .content-container {
-  width: 50vw !important;
+  width: 40vw !important;
     margin-left: auto;
     margin-right: auto;
     border-radius: .5rem .5rem .5rem .5rem;
