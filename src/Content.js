@@ -94,8 +94,8 @@ let x = matchGames[0].SaleEnds;
     if (props.props === "" || props.props === "-1"){
       return (
          <span>
-           <span className="opencritic-logo" style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}> N/A</span>
+           <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
+           <span style={{color:"black"}}><span className="opencritic-logo"> N/A</span></span>
      </span>
         )
     } else {
@@ -228,7 +228,7 @@ let x = matchGames[0].SaleEnds;
             </tr>
             <tr className="item-table-best">
               <td><div style={{marginLeft: '10px'}} className="logonin shopee"><img src={download} /></div></td>
-              <td className="version">Buy with $10 Gift Card</td>
+              <td className="version">Buy with $10 Gift Card on Shopee</td>
               <td className="version">
                  <a href={matchGames[0].URL} target="_blank">
                 <div className="btn btn-block btn-secondary">
