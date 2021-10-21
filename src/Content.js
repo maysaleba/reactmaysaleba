@@ -161,7 +161,7 @@ const Content = ({ search, setSearch, match }) => {
           {matchGames[0].Title}
         </Card.Header>
         <Card.Body style={{fontSize: 14}}>
-          <Row>
+          <Row xs={1} sm={2}>
             <Col>
               <span style={{ color: "#9c27b0" }}>Publisher:</span>{" "}
               {matchGames[0].Publisher}
