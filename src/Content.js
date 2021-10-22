@@ -10,6 +10,9 @@ import download from "./download.gif";
 let games = games1.concat(games2);
 
 const Content = ({ search, setSearch, match }) => {
+
+
+
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -36,9 +39,11 @@ const Content = ({ search, setSearch, match }) => {
     return game.Slug === match.params.games;
   });
 
+  console.log(matchGames[0].SalePrice)
+
   function PesoPrice(props) {
     console.log(props.props);
-    return "₱ " + Math.round(props.props * phpExchange);
+    return "₱" + Math.round(props.props * phpExchange);
   }
 
   function ReverseDesc(props) {
@@ -82,6 +87,26 @@ const Content = ({ search, setSearch, match }) => {
       year: "numeric",
     });
   }
+
+  function ShopeeCard() {
+    if (matchGames[0].platform === "Switch")
+    {
+      if (parseFloat(matchGames[0].SalePrice) <= 10 )
+      {
+        return <span>$10</span>
+      } else
+      if (parseFloat(matchGames[0].SalePrice) <= 20 ) 
+      {
+        return <span>$20</span>
+      }
+    } 
+
+    else {
+      return null;
+    }
+  }
+
+
 
   function WhichPlatform() {
     if (matchGames[0].IsPS4 === 1 && matchGames[0].IsPS5 === 1) {
@@ -156,7 +181,6 @@ const Content = ({ search, setSearch, match }) => {
     }
   }
 
-  let x = matchGames[0].SaleEnds;
 
   function HasOpenCritic(props) {
     if (props.props === "" || props.props === "-1") {
@@ -177,6 +201,7 @@ const Content = ({ search, setSearch, match }) => {
           hover="none"
           color="black"
           href={matchGames[0].OpenCriticURL}
+          target="_blank"
         >
           <span style={{ marginLeft: 0, color: "#9c27b0" }}>
             OpenCritic Rating:
@@ -263,18 +288,16 @@ const Content = ({ search, setSearch, match }) => {
   `;
 
   // console.log(matchGames[0].description.split('\n'));
-  console.log(matchGames[0].SalePrice);
   return (
     <div>
       <BackgroundContainer>
         <Background />
       </BackgroundContainer>
       <NaviBar search={search} setSearch={setSearch} />
-      <div className="text-center m-3 p-auto">
+      <div className="text-center m-3 p-auto" style={{paddingBottom: 15}}>
         <img
           alt=""
           style={{
-            paddingBottom: 20,
             height: "auto",
             maxWidth: "50%",
             borderRadius: "5px",
@@ -301,8 +324,9 @@ const Content = ({ search, setSearch, match }) => {
           </Row>
           <Row xs={1} sm={2}>
             <Col style={{paddingBottom: 10}}>
-              <HasOpenCritic props={matchGames[0].SCORE} />
-              {/*<a href={matchGames[0].OpenCriticURL}>{matchGames[0].SCORE}</a>*/}
+             <span style={{ color: "#9c27b0" }}>Platform: </span>{" "}
+              <WhichPlatform />
+             
             </Col>
             <Col style={{paddingBottom: 10}}>
               <span style={{ color: "#9c27b0" }}>Region: </span>
@@ -311,8 +335,7 @@ const Content = ({ search, setSearch, match }) => {
           </Row>
           <Row xs={1} sm={2}>
             <Col style={{paddingBottom: 10}}>
-              <span style={{ color: "#9c27b0" }}>Platform: </span>{" "}
-              <WhichPlatform />
+              <HasOpenCritic props={matchGames[0].SCORE} />
             </Col>
             <Col style={{paddingBottom: 10}}>
               <span style={{ color: "#9c27b0" }}>Genre:</span>{" "}
@@ -339,8 +362,7 @@ const Content = ({ search, setSearch, match }) => {
                     target="_blank"
                     style={{ padding: 10 }}
                   >
-                    Sale ends
-                    <br /> {DateConvert(matchGames[0].SaleEnds)}
+                   Sale ends {DateConvert(matchGames[0].SaleEnds)}
                   </a>
                 </td>
                 <td className="version">
@@ -363,13 +385,21 @@ const Content = ({ search, setSearch, match }) => {
                     <img src={download} />
                   </div>
                 </td>
-                <td className="version">Buy with $10 Gift Card on Shopee</td>
+                <td className="version">
+                <a
+                    href={matchGames[0].URL}
+                    target="_blank"
+                    style={{ padding: 10 }}
+                  >
+                Buy with <ShopeeCard /> Gift Card
+                  </a>
+                </td>
                 <td className="version">
                   <a href={matchGames[0].URL} target="_blank">
                     <div className="btn btn-block btn-secondary">
                       <PesoPrice props={matchGames[0].SalePrice} />
                       <span className="ml-2 badge badge-danger">
-                        -{matchGames[0].PercentOff}
+                        <ShopeeCard />
                       </span>
                     </div>
                   </a>
