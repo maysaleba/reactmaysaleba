@@ -150,6 +150,11 @@ a {
 }
 
 
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff !important;
+    background-color: #9c27b0 !important;
+}
+
 .item-price-table td a {
     padding: 0.75rem;
     display: block;
