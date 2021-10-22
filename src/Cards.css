@@ -45,6 +45,10 @@
     margin-left: 0.5rem !important;
 }
 
+.btn {
+  white-space: nowrap;
+}
+
 .btn .badge {
     position: relative;
     top: -1px;

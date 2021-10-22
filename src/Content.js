@@ -92,14 +92,25 @@ const Content = ({ search, setSearch, match }) => {
     if (matchGames[0].platform === "Switch")
     {
       if (parseFloat(matchGames[0].SalePrice) <= 10 )
-      {
-        return <span>$10</span>
-      } else
+        {
+          return <span>$10</span>
+        } else
       if (parseFloat(matchGames[0].SalePrice) <= 20 ) 
-      {
-        return <span>$20</span>
-      }
-    } 
+        {
+          return <span>$20</span>
+        } else
+      if (parseFloat(matchGames[0].SalePrice) <= 35 ) 
+        {
+          return <span>$35</span>
+        } else 
+      if (parseFloat(matchGames[0].SalePrice) <= 50 ) 
+        {
+          return <span>$50</span>
+        } else 
+        {
+          return <span>$50</span>
+        }
+    }
 
     else {
       return null;
