@@ -149,6 +149,7 @@ a {
     color: #343a40 !important;
 }
 
+
 .item-price-table td a {
     padding: 0.75rem;
     display: block;
@@ -255,6 +256,16 @@ display: inline-block;  /* may not need this, but I've found I do */
 background-size:  15px;
 background-position:  left center;
 background-image: url('OpenCritic_logo.svg');
+background-repeat: no-repeat;
+margin-left: 5px;
+padding-left: 20px;  /* width of the image plus a little extra padding */
+display: inline-block;  /* may not need this, but I've found I do */
+}
+
+.usregion-logo {
+background-size:  15px;
+background-position:  left center;
+background-image: url('US.svg');
 background-repeat: no-repeat;
 margin-left: 5px;
 padding-left: 20px;  /* width of the image plus a little extra padding */

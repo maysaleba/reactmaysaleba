@@ -3,9 +3,9 @@ import games1 from "./csvjson.json";
 import games2 from "./csvjsonus.json";
 import { Card, Row, Col } from "react-bootstrap";
 import NaviBar from "./NaviBar";
-import {Paper, Link} from "@mui/material";
+import { Paper, Link, Container } from "@mui/material";
 import styled from "styled-components";
-import download  from './download.gif'
+import download from "./download.gif";
 
 let games = games1.concat(games2);
 
@@ -41,73 +41,166 @@ const Content = ({ search, setSearch, match }) => {
     return "₱ " + Math.round(props.props * phpExchange);
   }
 
-  function ReverseDesc(props){
-
-    if (matchGames[0].platform === 'Playstation'){
-
-
-    let input = props.props;
-    let newText = input.split ('<br />').map ((item, i) => <p key={i}>{item}</p>);
-    return (
-        newText
-      )
-  } else {
-    let input = props.props;
-    let newText = input.split(/(?=•)/).map ((item, i) => <p key={i}>{item}</p>);
-    return (
-        newText
-        )
-  }
-
-}
-
-
-function WhichStore() {
-      if (matchGames[0].platform === 'Playstation'){
-    return (
-        <div style={{marginLeft: '10px'}} className="logonin psstore"><img src={download} /></div>
-      )
-  } else {
-    return (
-        <div style={{marginLeft: '10px'}} className="logonin eshop"><img src={download} /></div>
-        )
-  }
-}
-
-
-function DateConvert(s) {
-  var s = s.split(/\D/),
-    dt = new Date(s[0], s[1] - 1, s[2]);
-  return dt.toLocaleString('en-CA', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
-  });
-}
-
-
-let x = matchGames[0].SaleEnds;
-
-
-
-  function HasOpenCritic(props){
-    if (props.props === "" || props.props === "-1"){
-      return (
-         <span>
-           <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}><span className="opencritic-logo"> N/A</span></span>
-     </span>
-        )
+  function ReverseDesc(props) {
+    if (matchGames[0].platform === "Playstation") {
+      let input = props.props;
+      let newText = input
+        .split("<br />")
+        .map((item, i) => <p key={i}>{item}</p>);
+      return newText;
     } else {
-          return (
-         <Link underline="none" hover="none" color="black" href={matchGames[0].OpenCriticURL}>
-           <span style={{marginLeft: 0, color: "#9c27b0" }}>OpenCritic Rating:</span> 
-           <span style={{color:"black"}}> <span className="opencritic-logo">
-           <span style={{color: 'white', borderRadius: 5, backgroundColor: '#fc3e04', paddingLeft: '10px', paddingRight: '10px'}}>{matchGames[0].SCORE}</span></span></span>
-         </Link>
-      )
+      let input = props.props;
+      let newText = input
+        .split(/(?=•)/)
+        .map((item, i) => <p key={i}>{item}</p>);
+      return newText;
     }
+  }
 
+  function WhichStore() {
+    if (matchGames[0].platform === "Playstation") {
+      return (
+        <div style={{ marginLeft: "10px" }} className="logonin psstore">
+          <img src={download} />
+        </div>
+      );
+    } else {
+      return (
+        <div style={{ marginLeft: "10px" }} className="logonin eshop">
+          <img src={download} />
+        </div>
+      );
+    }
+  }
+
+  function DateConvert(s) {
+    var s = s.split(/\D/),
+      dt = new Date(s[0], s[1] - 1, s[2]);
+    return dt.toLocaleString("en-CA", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  }
+
+  function WhichPlatform() {
+    if (matchGames[0].IsPS4 === 1 && matchGames[0].IsPS5 === 1) {
+      return (
+        <>
+          <span
+            style={{
+              fontSize: 10,
+              borderRadius: 30,
+              border: "1px solid black",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+          >
+            PS4
+          </span>{" "}
+          <span
+            style={{
+              fontSize: 10,
+              borderRadius: 30,
+              border: "1px solid black",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+          >
+            PS5
+          </span>
+        </>
+      );
+    } else if (matchGames[0].IsPS4 === 1 && matchGames[0].IsPS5 === 0) {
+      return (
+        <span
+          style={{
+            fontSize: 10,
+            borderRadius: 30,
+            border: "1px solid black",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
+        >
+          PS4
+        </span>
+      );
+    } else if (matchGames[0].IsPS4 === 0 && matchGames[0].IsPS5 === 1) {
+      return (
+        <span
+          style={{
+            fontSize: 10,
+            borderRadius: 30,
+            border: "1px solid black",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
+        >
+          PS5
+        </span>
+      );
+    } else {
+      return (
+        <span
+          style={{
+            fontSize: 10,
+            borderRadius: 30,
+            border: "1px solid black",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
+        >
+          NSW
+        </span>
+      );
+    }
+  }
+
+  let x = matchGames[0].SaleEnds;
+
+  function HasOpenCritic(props) {
+    if (props.props === "" || props.props === "-1") {
+      return (
+        <span>
+          <span style={{ marginLeft: 0, color: "#9c27b0" }}>
+            OpenCritic Rating:
+          </span>
+          <span style={{ color: "black" }}>
+            <span className="opencritic-logo"> N/A</span>
+          </span>
+        </span>
+      );
+    } else {
+      return (
+        <Link
+          underline="none"
+          hover="none"
+          color="black"
+          href={matchGames[0].OpenCriticURL}
+        >
+          <span style={{ marginLeft: 0, color: "#9c27b0" }}>
+            OpenCritic Rating:
+          </span>
+          <span style={{ color: "black" }}>
+            {" "}
+            <span className="opencritic-logo">
+              <span
+                style={{
+                  fontSize: 13,
+                  color: "white",
+                  borderRadius: 30,
+                  backgroundColor: "#fc3e04",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                }}
+              >
+                {matchGames[0].SCORE}
+              </span>
+            </span>
+          </span>
+        </Link>
+      );
+    }
   }
 
   const BackgroundContainer = styled.div`
@@ -170,7 +263,7 @@ let x = matchGames[0].SaleEnds;
   `;
 
   // console.log(matchGames[0].description.split('\n'));
-  console.log(matchGames[0].SalePrice)
+  console.log(matchGames[0].SalePrice);
   return (
     <div>
       <BackgroundContainer>
@@ -180,7 +273,12 @@ let x = matchGames[0].SaleEnds;
       <div className="text-center m-3 p-auto">
         <img
           alt=""
-          style={{paddingBottom: 20, height: "auto", maxWidth: "50%", borderRadius: "5px" }}
+          style={{
+            paddingBottom: 20,
+            height: "auto",
+            maxWidth: "50%",
+            borderRadius: "5px",
+          }}
           src={matchGames[0].Image}
         />
       </div>
@@ -189,67 +287,105 @@ let x = matchGames[0].SaleEnds;
         <Card.Header style={{ backgroundColor: "white", fontWeight: "bold" }}>
           {matchGames[0].Title}
         </Card.Header>
-        <Card.Body style={{fontSize: 14}}>
+        <Card.Body style={{ fontSize: 14 }}>
+     
           <Row xs={1} sm={2}>
-            <Col>
+            <Col style={{paddingBottom: 10}}>
               <span style={{ color: "#9c27b0" }}>Publisher:</span>{" "}
               {matchGames[0].Publisher}
             </Col>
-            <Col>
+            <Col style={{paddingBottom: 10}}>
               <span style={{ color: "#9c27b0" }}>Release Date:</span>{" "}
               {DateConvert(matchGames[0].ReleaseDate)}
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <HasOpenCritic props={matchGames[0].SCORE}/>
+          <Row xs={1} sm={2}>
+            <Col style={{paddingBottom: 10}}>
+              <HasOpenCritic props={matchGames[0].SCORE} />
               {/*<a href={matchGames[0].OpenCriticURL}>{matchGames[0].SCORE}</a>*/}
             </Col>
+            <Col style={{paddingBottom: 10}}>
+              <span style={{ color: "#9c27b0" }}>Region: </span>
+              <span className="usregion-logo">US</span>{" "}
+            </Col>
           </Row>
-          <Row>
-            <Col>
+          <Row xs={1} sm={2}>
+            <Col style={{paddingBottom: 10}}>
+              <span style={{ color: "#9c27b0" }}>Platform: </span>{" "}
+              <WhichPlatform />
+            </Col>
+            <Col style={{paddingBottom: 10}}>
               <span style={{ color: "#9c27b0" }}>Genre:</span>{" "}
               {matchGames[0].genre}
             </Col>
           </Row>
         </Card.Body>
-        <div className="price-container" style={{margin: 'auto'}}>
-        <table className="table table-align-middle item-price-table">
-          <tbody>
-            <tr className="item-table-best">
-              <td><a href={matchGames[0].URL} target="_blank" style={{padding: 0}}><WhichStore /></a></td>
-              <td className="version"><a href={matchGames[0].URL} target="_blank" style={{padding: 10}}>Sale ends<br /> {DateConvert(matchGames[0].SaleEnds)}</a></td>
-              <td className="version">
-              <a href={matchGames[0].URL} target="_blank">
-                <div className="btn btn-block btn-secondary">
-                  <PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span>
-                </div>
-                </a>
-              </td>
-            </tr>
-            <tr className="item-table-best">
-              <td><div style={{marginLeft: '10px'}} className="logonin shopee"><img src={download} /></div></td>
-              <td className="version">Buy with $10 Gift Card on Shopee</td>
-              <td className="version">
-                 <a href={matchGames[0].URL} target="_blank">
-                <div className="btn btn-block btn-secondary">
-                  <PesoPrice props={matchGames[0].SalePrice} /><span className="ml-2 badge badge-danger">-{matchGames[0].PercentOff}</span>
-                </div>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-          </div>
+        <div className="price-container" style={{ margin: "auto" }}>
+          <table className="table table-align-middle item-price-table">
+            <tbody>
+              <tr className="item-table-best">
+                <td>
+                  <a
+                    href={matchGames[0].URL}
+                    target="_blank"
+                    style={{ padding: 0 }}
+                  >
+                    <WhichStore />
+                  </a>
+                </td>
+                <td className="version">
+                  <a
+                    href={matchGames[0].URL}
+                    target="_blank"
+                    style={{ padding: 10 }}
+                  >
+                    Sale ends
+                    <br /> {DateConvert(matchGames[0].SaleEnds)}
+                  </a>
+                </td>
+                <td className="version">
+                  <a href={matchGames[0].URL} target="_blank">
+                    <div className="btn btn-block btn-secondary">
+                      <PesoPrice props={matchGames[0].SalePrice} />
+                      <span className="ml-2 badge badge-danger">
+                        -{matchGames[0].PercentOff}
+                      </span>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr className="item-table-best">
+                <td>
+                  <div
+                    style={{ marginLeft: "10px" }}
+                    className="logonin shopee"
+                  >
+                    <img src={download} />
+                  </div>
+                </td>
+                <td className="version">Buy with $10 Gift Card on Shopee</td>
+                <td className="version">
+                  <a href={matchGames[0].URL} target="_blank">
+                    <div className="btn btn-block btn-secondary">
+                      <PesoPrice props={matchGames[0].SalePrice} />
+                      <span className="ml-2 badge badge-danger">
+                        -{matchGames[0].PercentOff}
+                      </span>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-
-        <div style={{fontSize: 14}}>
-        <Card.Header style={{ backgroundColor: "white" }}>
-          Description
-        </Card.Header>
-        <Card.Body>
+        <div style={{ fontSize: 14 }}>
+          <Card.Header style={{ backgroundColor: "white" }}>
+            Description
+          </Card.Header>
+          <Card.Body>
             <ReverseDesc props={matchGames[0].description} />
-        </Card.Body>
+          </Card.Body>
         </div>
       </Paper>
     </div>
