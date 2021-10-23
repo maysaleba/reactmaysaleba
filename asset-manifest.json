@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/reactmaysaleba/static/css/main.6a9b2ec0.chunk.css",
-    "main.js": "/reactmaysaleba/static/js/main.3a291eca.chunk.js",
-    "main.js.map": "/reactmaysaleba/static/js/main.3a291eca.chunk.js.map",
-    "runtime-main.js": "/reactmaysaleba/static/js/runtime-main.3c9c3d30.js",
-    "runtime-main.js.map": "/reactmaysaleba/static/js/runtime-main.3c9c3d30.js.map",
-    "static/css/2.d8cb5cde.chunk.css": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.160fb3d2.chunk.js": "/reactmaysaleba/static/js/2.160fb3d2.chunk.js",
-    "static/js/2.160fb3d2.chunk.js.map": "/reactmaysaleba/static/js/2.160fb3d2.chunk.js.map",
-    "static/js/3.ba1cb89c.chunk.js": "/reactmaysaleba/static/js/3.ba1cb89c.chunk.js",
-    "static/js/3.ba1cb89c.chunk.js.map": "/reactmaysaleba/static/js/3.ba1cb89c.chunk.js.map",
-    "index.html": "/reactmaysaleba/index.html",
-    "static/css/2.d8cb5cde.chunk.css.map": "/reactmaysaleba/static/css/2.d8cb5cde.chunk.css.map",
-    "static/css/main.6a9b2ec0.chunk.css.map": "/reactmaysaleba/static/css/main.6a9b2ec0.chunk.css.map",
-    "static/js/2.160fb3d2.chunk.js.LICENSE.txt": "/reactmaysaleba/static/js/2.160fb3d2.chunk.js.LICENSE.txt",
-    "static/media/Cards.css": "/reactmaysaleba/static/media/psplus.19bc6709.svg",
-    "static/media/logo.55b508d1.svg": "/reactmaysaleba/static/media/logo.55b508d1.svg",
-    "static/media/App.css": "/reactmaysaleba/static/media/woojooaidp-webfont.3fa0e295.woff"
+    "main.css": "/maysaleba.github.io/static/css/main.531147cd.chunk.css",
+    "main.js": "/maysaleba.github.io/static/js/main.f906cd55.chunk.js",
+    "main.js.map": "/maysaleba.github.io/static/js/main.f906cd55.chunk.js.map",
+    "runtime-main.js": "/maysaleba.github.io/static/js/runtime-main.e53ca9c1.js",
+    "runtime-main.js.map": "/maysaleba.github.io/static/js/runtime-main.e53ca9c1.js.map",
+    "static/css/2.d8cb5cde.chunk.css": "/maysaleba.github.io/static/css/2.d8cb5cde.chunk.css",
+    "static/js/2.f8fbcbec.chunk.js": "/maysaleba.github.io/static/js/2.f8fbcbec.chunk.js",
+    "static/js/2.f8fbcbec.chunk.js.map": "/maysaleba.github.io/static/js/2.f8fbcbec.chunk.js.map",
+    "static/js/3.ba1cb89c.chunk.js": "/maysaleba.github.io/static/js/3.ba1cb89c.chunk.js",
+    "static/js/3.ba1cb89c.chunk.js.map": "/maysaleba.github.io/static/js/3.ba1cb89c.chunk.js.map",
+    "index.html": "/maysaleba.github.io/index.html",
+    "static/css/2.d8cb5cde.chunk.css.map": "/maysaleba.github.io/static/css/2.d8cb5cde.chunk.css.map",
+    "static/css/main.531147cd.chunk.css.map": "/maysaleba.github.io/static/css/main.531147cd.chunk.css.map",
+    "static/js/2.f8fbcbec.chunk.js.LICENSE.txt": "/maysaleba.github.io/static/js/2.f8fbcbec.chunk.js.LICENSE.txt",
+    "static/media/Cards.css": "/maysaleba.github.io/static/media/psplus.19bc6709.svg",
+    "static/media/logo.55b508d1.svg": "/maysaleba.github.io/static/media/logo.55b508d1.svg",
+    "static/media/App.css": "/maysaleba.github.io/static/media/woojooaidp-webfont.3fa0e295.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.3c9c3d30.js",
+    "static/js/runtime-main.e53ca9c1.js",
     "static/css/2.d8cb5cde.chunk.css",
-    "static/js/2.160fb3d2.chunk.js",
-    "static/css/main.6a9b2ec0.chunk.css",
-    "static/js/main.3a291eca.chunk.js"
+    "static/js/2.f8fbcbec.chunk.js",
+    "static/css/main.531147cd.chunk.css",
+    "static/js/main.f906cd55.chunk.js"
   ]
 }
